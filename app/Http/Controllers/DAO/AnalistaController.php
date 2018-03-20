@@ -83,4 +83,12 @@ class AnalistaController extends Controller
     {
         //
     }
+
+    public function search($matricula, $password)
+    {
+        $analista = analistum::where('MatriculaAnalista', 'like', $matricula)
+                        ->where('SenhaAnalista', 'like', sha1($password))
+                        ->first();
+        return $analista; 
+    }
 }

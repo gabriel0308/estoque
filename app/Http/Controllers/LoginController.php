@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-use Models\Analistum;
+use App\Models\Analistum;
+use App\Http\Controllers\DAO\AnalistaController;
 
 class LoginController extends Controller
 {
@@ -22,15 +23,12 @@ class LoginController extends Controller
     {
         //processa o formulário
         echo($request->matricula);
-        $logins = DB::table('analista')
-                        ->select('MatriculaAnalista','NomeAnalista','SenhaAnalista')
-                        ->where('MatriculaAnalista', 'like', $request->matricula)
-                        ->where('SenhaAnalista', 'like', sha1($request->password))
-                        ->first();
+       $analistaController = new AnalistaController();
+        $logins = $analistaController->search($request->matricula, $request->password);
         if($logins != null)
             echo('<br>'.$logins->NomeAnalista);
         else {
-            return redirect('https://media.giphy.com/media/8abAbOrQ9rvLG/giphy.gif');
+            return redirect()->back();
         }
     }
 
