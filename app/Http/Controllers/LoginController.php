@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Models\Analistum;
 
 class LoginController extends Controller
 {
@@ -16,10 +18,20 @@ class LoginController extends Controller
 
     }
 
-    public function validaLogin()
+    public function validaLogin(Request $request)
     {
         //processa o formulário
-        echo("funciona.");
+        echo($request->matricula);
+        $logins = DB::table('analista')
+                        ->select('MatriculaAnalista','NomeAnalista','SenhaAnalista')
+                        ->where('MatriculaAnalista', 'like', $request->matricula)
+                        ->where('SenhaAnalista', 'like', sha1($request->password))
+                        ->first();
+        if($logins != null)
+            echo('<br>'.$logins->NomeAnalista);
+        else {
+            return redirect('https://media.giphy.com/media/8abAbOrQ9rvLG/giphy.gif');
+        }
     }
 
 }
