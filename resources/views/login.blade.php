@@ -17,9 +17,9 @@
                             <div class="col-md-6">
                                 <input id="matricula" type="text" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="matricula" value="{{ old('email') }}" required autofocus>
 
-                                @if ($errors->has('email'))
+                                @if (isset($errors))
                                     <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong>{{ $errors }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -43,7 +43,7 @@
                             <div class="col-md-6 offset-md-4">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('Remember Me') }}
+                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('Lembrar Usuário') }}
                                     </label>
                                 </div>
                             </div>
@@ -52,11 +52,11 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
+                                    {{ __('Entrar') }}
                                 </button>
 
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    {{ __('Forgot Your Password?') }}
+                                    {{ __('Esqueceu a Senha?') }}
                                 </a>
                             </div>
                         </div>

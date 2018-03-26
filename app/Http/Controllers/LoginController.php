@@ -26,9 +26,14 @@ class LoginController extends Controller
        $analistaController = new AnalistaController();
         $logins = $analistaController->search($request->matricula, $request->password);
         if($logins != null)
-            echo('<br>'.$logins->NomeAnalista);
+        {
+            $request->session()->put('analistaNome', $logins.NomeAnalista);
+            $request->session()->put('analistaMatricula', $logins.MatriculaAnalista);
+            echo($request->session()->get('analistaNome').'<br>'.$request->session()->get('analistaMatricula'));
+        }
         else {
-            return redirect()->back();
+            $errors = "Usuário ou Senha incorretos.";
+            return redirect()->back()->with($errors);
         }
     }
 
