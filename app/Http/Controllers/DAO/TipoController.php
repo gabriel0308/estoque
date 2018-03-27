@@ -16,6 +16,7 @@ class TipoController extends Controller
     public function index()
     {
         //
+        return view('tipo');
     }
 
     /**
