@@ -28,7 +28,9 @@ class LoginController extends Controller
         {
             $request->session()->put('analistaNome', $logins["NomeAnalista"]);
             $request->session()->put('analistaMatricula', $logins["MatriculaAnalista"]);
-            echo($request->session()->get('analistaNome').'<br>'.$request->session()->get('analistaMatricula'));
+            //echo($request->session()->get('analistaNome').'<br>'.$request->session()->get('analistaMatricula'));
+
+            return view('home')->with('analistaNome', $logins["NomeAnalista"])->with('analistaMatricula', $logins["MatriculaAnalista"]);
         }
         else {
             return redirect()->back()->with('loginErrors','Usuário ou senha incorretos');

@@ -14,6 +14,8 @@
                         </div>
                     @endif
 
+                    hello {{ session('analistaNome')}} <br><br>
+
                     You are logged in!
                 </div>
             </div>
