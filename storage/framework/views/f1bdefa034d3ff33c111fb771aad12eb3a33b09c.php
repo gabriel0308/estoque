@@ -9,17 +9,17 @@
                     <form method="POST" action="<?php echo e('ValidaLogin'); ?>">
                         <?php echo csrf_field(); ?>
 
+                            <?php if(session('loginErrors')): ?>
+                                <div class="alert alert-danger">
+                                    <strong><?php echo e(session('loginErrors')); ?></strong>
+                                </div>
+                            <?php endif; ?>
+
                         <div class="form-group row">
                             <label for="matricula " class="col-sm-4 col-form-label text-md-right"><?php echo e(__('Matricula')); ?></label>
 
                             <div class="col-md-6">
                                 <input id="matricula" type="text" class="form-control<?php echo e($errors->has('email') ? ' is-invalid' : ''); ?>" name="matricula" value="<?php echo e(old('email')); ?>" required autofocus>
-
-                                <?php if(isset($errors)): ?>
-                                    <span class="invalid-feedback">
-                                        <strong><?php echo e($errors); ?></strong>
-                                    </span>
-                                <?php endif; ?>
                             </div>
                         </div>
 

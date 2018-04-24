@@ -11,17 +11,17 @@
                     <form method="POST" action="{{'ValidaLogin'}}">
                         @csrf
 
+                            @if (session('loginErrors'))
+                                <div class="alert alert-danger">
+                                    <strong>{{ session('loginErrors') }}</strong>
+                                </div>
+                            @endif
+
                         <div class="form-group row">
                             <label for="matricula " class="col-sm-4 col-form-label text-md-right">{{ __('Matricula') }}</label>
 
                             <div class="col-md-6">
                                 <input id="matricula" type="text" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="matricula" value="{{ old('email') }}" required autofocus>
-
-                                @if (isset($errors))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors }}</strong>
-                                    </span>
-                                @endif
                             </div>
                         </div>
 
