@@ -85,4 +85,9 @@ class FabricanteController extends Controller
     {
         //
     }
+
+    public function gravarFabricante(Request $request)
+    {
+        echo("hello!!!");
+    }
 }

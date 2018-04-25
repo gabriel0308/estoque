@@ -28,3 +28,6 @@ Route::resource('tipo','DAO\TipoController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::view('/cadastroFabricante', 'cadastroFabricante');
+
+Route::post('gravarFabricante', 'DAO\FabricanteController@gravarFabricante');

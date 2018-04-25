@@ -17,6 +17,8 @@
                     hello {{ session('analistaNome')}} <br><br>
 
                     You are logged in!
+
+                    <a href="/cadastroFabricante">Cadastrar Fabricante</a>
                 </div>
             </div>
         </div>

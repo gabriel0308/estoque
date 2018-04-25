@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Analistum;
 use App\Http\Controllers\DAO\AnalistaController;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -30,7 +31,10 @@ class LoginController extends Controller
             $request->session()->put('analistaMatricula', $logins["MatriculaAnalista"]);
             //echo($request->session()->get('analistaNome').'<br>'.$request->session()->get('analistaMatricula'));
 
-            return view('home')->with('analistaNome', $logins["NomeAnalista"])->with('analistaMatricula', $logins["MatriculaAnalista"]);
+            Auth::setUser($logins);
+
+            var_dump(Auth::user());
+            //return view('home')->with('analistaNome', $logins["NomeAnalista"])->with('analistaMatricula', $logins["MatriculaAnalista"]);
         }
         else {
             return redirect()->back()->with('loginErrors','Usuário ou senha incorretos');
