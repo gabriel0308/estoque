@@ -14,11 +14,14 @@
                         </div>
                     @endif
 
-                    hello {{ session('analistaNome')}} <br><br>
+                    hello {{ auth::user()->NomeAnalista}} <br><br>
 
                     You are logged in!
 
+                    <br>
                     <a href="/cadastroFabricante">Cadastrar Fabricante</a>
+                    <br>
+                    <a href="/cadastroAnalista">Cadastrar Analista</a>
                 </div>
             </div>
         </div>

@@ -15,8 +15,15 @@
     return view('welcome');
 }); */
 
+#Framework Default Routes
+Auth::routes();
+
+#Login
 Route::get('/', 'Logincontroller@showLogin');
 Route::post('ValidaLogin', 'LoginController@validaLogin');
+Route::get('/home', 'HomeController@index')->name('home');
+
+#DAO Controllers
 Route::resource('analista','DAO\AnalistaController');
 Route::resource('computador','DAO\ComputadorController');
 Route::resource('fabricante','DAO\FabricanteController');
@@ -25,9 +32,11 @@ Route::resource('movimentacao','DAO\MovimentacaoController');
 Route::resource('software','DAO\SoftwareController');
 Route::resource('tipo','DAO\TipoController');
 
-Auth::routes();
+#Analista
+Route::view('/cadastroAnalista', 'cadastroAnalista');
+Route::post('gravarAnalista', 'DAO\AnalistaController@gravarAnalista');
 
-Route::get('/home', 'HomeController@index')->name('home');
+#Fabricante
 Route::view('/cadastroFabricante', 'cadastroFabricante');
-
 Route::post('gravarFabricante', 'DAO\FabricanteController@gravarFabricante');
+
