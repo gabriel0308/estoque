@@ -37,6 +37,19 @@ class AnalistaController extends Controller
     public function store(Request $request)
     {
         //
+        if($request->SenhaAnalista == $request->confirmar){
+        $analista = new Analistum;
+        $analista->MatriculaAnalista = $request->MatriculaAnalista;
+        $analista->NomeAnalista = $request->NomeAnalista;
+        $analista->SenhaAnalista = sha1($request->SenhaAnalista);
+        $analista->save();
+        return redirect()->back();
+        }
+        else{
+            return redirect()->back();
+        }
+
+
     }
 
     /**
@@ -91,4 +104,5 @@ class AnalistaController extends Controller
                         ->first();
         return $analista; 
     }
+
 }
