@@ -61,3 +61,8 @@ ALTER TABLE Software ADD CONSTRAINT FOREIGN KEY(IdComp) REFERENCES Computador (I
 ALTER TABLE Movimentacao ADD CONSTRAINT FOREIGN KEY(IdComp) REFERENCES Computador (IdComp)
 ALTER TABLE Computador ADD CONSTRAINT FOREIGN KEY(IdModelo) REFERENCES Modelo (IdModelo)
 ALTER TABLE Modelo ADD CONSTRAINT FOREIGN KEY(IdTipo) REFERENCES Tipo (Idtipo)
+
+insert into analista values ('', 'cs261967', 'Gabriel', sha1('9F90amv8'))
+select * from analista
+
+ALTER TABLE analista ADD remember_token varchar(60)
