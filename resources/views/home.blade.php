@@ -22,6 +22,8 @@
                     <a href="/cadastroFabricante">Cadastrar Fabricante</a>
                     <br>
                     <a href="/cadastroAnalista">Cadastrar Analista</a>
+                    <br>
+                    <a href="/listaAnalista">Listar Analistas</a>
                 </div>
             </div>
         </div>

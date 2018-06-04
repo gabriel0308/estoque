@@ -35,6 +35,7 @@ Route::resource('tipo','DAO\TipoController');
 #Analista
 Route::view('/cadastroAnalista', 'cadastroAnalista');
 Route::post('gravarAnalista', 'DAO\AnalistaController@store');
+Route::view('/listaAnalista', 'listaAnalista');
 
 #Fabricante
 Route::view('/cadastroFabricante', 'cadastroFabricante');
