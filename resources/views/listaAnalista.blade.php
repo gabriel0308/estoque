@@ -20,10 +20,12 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($analistas as $analista)
                                 <tr>
-                                    <th>teste</th>
-                                    <th>teste2</th>
+                                    <th>{{$analista->MatriculaAnalista}}</th>
+                                    <th>{{$analista->NomeAnalista}}</th>
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>                        
                 </div>

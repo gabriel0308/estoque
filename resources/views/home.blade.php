@@ -23,7 +23,7 @@
                     <br>
                     <a href="/cadastroAnalista">Cadastrar Analista</a>
                     <br>
-                    <a href="/listaAnalista">Listar Analistas</a>
+                    <a href="/listagemAnalistas">Listar Analistas</a>
                 </div>
             </div>
         </div>

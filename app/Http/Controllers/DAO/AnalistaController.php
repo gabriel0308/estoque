@@ -105,4 +105,9 @@ class AnalistaController extends Controller
         return $analista; 
     }
 
+    public function listagemAnalistas(){
+        $analistas = analistum::all();
+        return view('listaAnalista', compact('analistas'));
+    }
+
 }
