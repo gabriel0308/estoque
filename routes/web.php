@@ -40,5 +40,9 @@ Route::get('/listagemAnalistas','DAO\AnalistaController@listagemAnalistas');
 
 #Fabricante
 Route::view('/cadastroFabricante', 'cadastroFabricante');
-Route::post('gravarFabricante', 'DAO\FabricanteController@gravarFabricante');
+Route::post('gravarFabricante', 'DAO\FabricanteController@store');
+
+#Tipo
+Route::view('/cadastroTipo','cadastroFabricante');
+Route::post('gravarTipo', 'DAO\TipoController@store');
 

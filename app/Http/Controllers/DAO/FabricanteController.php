@@ -38,7 +38,10 @@ class FabricanteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $fabricante = new Fabricante;
+        $fabricante->NomeFabricante = $request->NomeFabricante;
+        $fabricante->save();
+        return redirect()->back();
     }
 
     /**
