@@ -15,15 +15,15 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th>Matricula</th>
                                     <th>Nome</th>
+                                    <th>Matricula</th>                                    
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($analistas as $analista)
                                 <tr>
-                                    <th>{{$analista->MatriculaAnalista}}</th>
                                     <th>{{$analista->NomeAnalista}}</th>
+                                    <th>{{$analista->MatriculaAnalista}}</th>
                                 </tr>
                                 @endforeach
                             </tbody>

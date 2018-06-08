@@ -11,7 +11,7 @@
                     <form action="gravarTipo" method="post">
                     @csrf
                         <div class="form-group">
-                            <label for="NomeTipo">Fabricante:</label>
+                            <label for="NomeTipo">Tipo:</label>
                             <input type="text" name="NomeTipo" id="NomeTipo">
                         </div>
                         <button type="submit" class="btn btn-default">Adicionar</button>

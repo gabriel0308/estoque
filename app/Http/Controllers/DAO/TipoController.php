@@ -37,7 +37,10 @@ class TipoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $tipo = new Tipo;
+        $tipo->NomeTipo = $request->NomeTipo;
+        $tipo->save();
+        return redirect()->back();
     }
 
     /**
