@@ -47,4 +47,5 @@ Route::post('gravarTipo', 'DAO\TipoController@store')->middleware('auth');
 
 #Modelo
 Route::get('cadastrarModelo','DAO\ModeloController@cadastrarModelo')->middleware('auth');
+Route::post('gravarModelo', 'DAO\ModeloController@store')->middleware('auth');
 

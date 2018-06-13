@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Cadastro de Modelo') }}</div>
 
                 <div class="card-body">
-                <form method="POST" action="{{'gravarModelo'}}">
+                <form method="POST" action="gravarModelo">
                         @csrf
 
                         <div class="form-group row">
@@ -25,7 +25,7 @@
                             <div class="col-md-6">
                                 <select name="IdTipo" id="IdTipo" class="form-control">
                                     @foreach ($tipos as $tipo)
-                                        <option value="{{$tipo->IdTipo}}">{{$tipo->NomeTipo}}</option>
+                                        <option value="{{$tipo->Idtipo}}">{{$tipo->NomeTipo}}</option>
                                     @endforeach
                                 </select>
                             </div>

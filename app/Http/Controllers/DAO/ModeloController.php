@@ -51,6 +51,14 @@ class ModeloController extends Controller
     public function store(Request $request)
     {
         //
+        $modelo = new Modelo;
+        $modelo->NomeModelo = $request->NomeModelo;
+        $tipo = Tipo::find($request->IdTipo);
+        $fabricante = Fabricante::find($request->IdFabricante);
+        $modelo->tipo()->associate($tipo);
+        $modelo->fabricante()->associate($fabricante);
+        $modelo->save();
+        return redirect()->back();
     }
 
     /**
