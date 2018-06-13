@@ -33,15 +33,18 @@ Route::resource('software','DAO\SoftwareController');
 Route::resource('tipo','DAO\TipoController');
 
 #Analista
-Route::view('/cadastroAnalista', 'cadastroAnalista')->middleware('auth');
+Route::view('/cadastroAnalista', 'forms\cadastroAnalista')->middleware('auth');
 Route::post('gravarAnalista', 'DAO\AnalistaController@store')->middleware('auth');
 Route::get('/listagemAnalistas','DAO\AnalistaController@listagemAnalistas')->middleware('auth');
 
 #Fabricante
-Route::view('/cadastroFabricante', 'cadastroFabricante')->middleware('auth');
+Route::view('/cadastroFabricante', 'forms\cadastroFabricante')->middleware('auth');
 Route::post('gravarFabricante', 'DAO\FabricanteController@store')->middleware('auth');
 
 #Tipo
-Route::view('/cadastroTipo','cadastroTipo')->middleware('auth');
+Route::view('/cadastroTipo','forms\cadastroTipo')->middleware('auth');
 Route::post('gravarTipo', 'DAO\TipoController@store')->middleware('auth');
+
+#Modelo
+Route::get('cadastrarModelo','DAO\ModeloController@cadastrarModelo')->middleware('auth');
 

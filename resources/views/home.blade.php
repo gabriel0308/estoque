@@ -26,6 +26,8 @@
                     <a href="/cadastroTipo">Cadastrar Tipo</a>
                     <br>
                     <a href="/listagemAnalistas">Listar Analistas</a>
+                    <br>
+                    <a href="/cadastrarModelo">Cadastrar Modelo</a>
                 </div>
             </div>
         </div>

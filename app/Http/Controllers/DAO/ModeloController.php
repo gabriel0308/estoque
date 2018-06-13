@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\DAO;
 
 use App\Models\Modelo;
+use App\Models\Tipo;
+use App\Models\Fabricante;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -13,7 +15,17 @@ class ModeloController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    
+    public function cadastrarModelo() 
+    {
+        $tipos = Tipo::orderBy('NomeTipo','asc')
+                    ->get();
+        $fabricantes = Fabricante::orderBy('NomeFabricante', 'asc')
+                        ->get();
+        return view('forms\cadastroModelo', compact('tipos'), compact('fabricantes'));
+    }
+
+     public function index()
     {
         //
 
