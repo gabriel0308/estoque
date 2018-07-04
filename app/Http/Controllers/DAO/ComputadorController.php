@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\DAO;
 
 use App\Models\Computador;
+use App\Models\Modelo;
+use App\Models\Tipo;
+use App\Models\Fabricante;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -83,4 +86,46 @@ class ComputadorController extends Controller
     {
         //
     }
+
+    public function cadastrarEquipamento(){
+        $modelos = Modelo::join('Fabricante', 'Fabricante.IdFabricante', '=', 'Modelo.IdFabricante')
+                            ->join('Tipo', 'Tipo.IdTipo', '=', 'Modelo.IdTipo')
+                            ->get();
+
+        // $fabricantes = Fabricante::orderBy('NomeFabricante', 'asc')
+        //                     ->get();
+
+        $fabricantes =  Modelo::join('Fabricante', 'Fabricante.IdFabricante', '=', 'Modelo.IdFabricante')
+                                ->select('Fabricante.IdFabricante', 'Fabricante.NomeFabricante')
+                                ->where('Modelo.IdTipo', '=', 2)
+                                ->distinct('Fabricante.IdFabricante')
+                                ->orderBy('Fabricante.NomeFabricante', 'asc')
+                                ->get();
+
+        $tipos = Tipo::orderBy('NomeTipo', 'asc')
+                            ->get();
+
+        return view('forms\cadastroEquipamento', compact('modelos', 'tipos', 'fabricantes'));
+    }
+
+    public function listarFabricanteAjax($idTipo)
+    {
+        $fabricantes =  Modelo::join('Fabricante', 'Fabricante.IdFabricante', '=', 'Modelo.IdFabricante')
+                                ->select('Fabricante.IdFabricante', 'Fabricante.NomeFabricante')
+                                ->where('Modelo.IdTipo', '=', $idTipo)
+                                ->distinct('Fabricante.IdFabricante')
+                                ->orderBy('Fabricante.NomeFabricante', 'asc')
+                                ->get();
+        return json_encode($fabricantes);
+
+    }
+    
+    public function listarModeloAjax($idFabricante, $idTipo)
+    {
+        $modelos = Modelo::where("IdFabricante", $idFabricante)
+                            ->where("IdTipo", $idTipo)
+                            ->get();
+        return json_encode($modelos);
+    }
+
 }

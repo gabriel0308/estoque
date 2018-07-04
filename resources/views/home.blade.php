@@ -28,6 +28,8 @@
                     <a href="/listagemAnalistas">Listar Analistas</a>
                     <br>
                     <a href="/cadastrarModelo">Cadastrar Modelo</a>
+                    <br>
+                    <a href="/cadastrarEquipamento">Cadastrar Equipamento</a>
                 </div>
             </div>
         </div>

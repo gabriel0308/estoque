@@ -12,7 +12,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
 /**
  * Class Tipo
  * 
- * @property float $Idtipo
+ * @property float $IdTipo
  * @property string $NomeTipo
  * 
  * @property \Illuminate\Database\Eloquent\Collection $modelos
@@ -22,7 +22,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
 class Tipo extends Eloquent
 {
 	protected $table = 'tipo';
-	protected $primaryKey = 'Idtipo';
+	protected $primaryKey = 'IdTipo';
 	public $timestamps = false;
 
 	protected $fillable = [

@@ -25,7 +25,7 @@
                             <div class="col-md-6">
                                 <select name="IdTipo" id="IdTipo" class="form-control">
                                     @foreach ($tipos as $tipo)
-                                        <option value="{{$tipo->Idtipo}}">{{$tipo->NomeTipo}}</option>
+                                        <option value="{{$tipo->IdTipo}}">{{$tipo->NomeTipo}}</option>
                                     @endforeach
                                 </select>
                             </div>
