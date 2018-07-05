@@ -29,7 +29,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-group row" name="DivIdTipo">
                             <label for="IdTipo " class="col-sm-4 col-form-label text-md-right">{{ __('Tipo') }}</label>
 
                             <div class="col-md-6">
@@ -43,11 +43,14 @@
 
 
                         <script type="text/javascript">
-                            $(document).ready(function() {
+                            console.log(1);
 
-                                $('select[name="1"').empty();
-                                
-                                $('select[name="idTipo"]').on('change', function() {
+                            $(document).ready(function() {
+                                console.log(2);
+                          
+                                $('select[name="IdTipo"]').on('change', function() {
+
+                                    console.log(3);
 
                                     var idTipo = $(this).val();
                                     if(idTipo) {
@@ -59,9 +62,15 @@
                                             success:function(data) {
                                                 console.log(data);
 
-                                                $('select[name="IdFabricante"]').empty();
+                                                var sel = $(<"select id=\"IdFabricante\" name=\"IdFabricante\" />");
+                                                sel.insertAfter("DivIdTipo");
                                                 $.each(data, function(fabrica, value) {
-                                                    $('select[name="IdFabricante"]').append('<option value="'+ key + '">' + value + '</option>');
+
+                                                    console.log(value.IdFabricante);
+                                                    console.log(value.NomeFabricante);
+
+                                                    //$('select[name="IdFabricante"]').append('<option value="'+ value.IdFabricante + '">' + value.NomeFabricante + '</option>');
+                                                    sel.append($("<option>").attr('value',value.IdFabricante).text(value.NomeFabricante));
                                                 });
 
                                             }
