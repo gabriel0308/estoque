@@ -2,6 +2,8 @@
 
 @section('content')
 
+<script src="{{ asset('js/equipamentos.js') }}" defer></script>
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -60,7 +62,7 @@
                             </div>
                         </div>
 
-                        <script type="text/javascript">
+                        {{-- <script type="text/javascript">
 
                             $(document).ready(function() {
                           
@@ -147,7 +149,7 @@
                                 });
 
                             });
-                        </script>
+                        </script> --}}
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
