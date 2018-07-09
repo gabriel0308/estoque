@@ -163,6 +163,7 @@ return [
 
         //added manually
         Reliese\Coders\CodersServiceProvider::class,
+        Skydiver\LaravelMaterializeCSS\MaterializeCSSServiceProvider::class,
     ],
 
     /*
@@ -212,6 +213,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'code' => Reliese\Coders\CodersServiceProvider::class,
+        'MaterializeCSS' => Skydiver\LaravelMaterializeCSS\MaterializeCSS::class,
     ],
 
 ];

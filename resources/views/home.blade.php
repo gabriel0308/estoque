@@ -1,6 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
+    
+    <a href="/cadastroFabricante" class="nav-link">Cadastrar Fabricante</a>    
+    <a href="/cadastroAnalista" class="nav-link">Cadastrar Analista</a>    
+    <a href="/cadastroTipo" class="nav-link">Cadastrar Tipo</a>    
+    <a href="/listagemAnalistas" class="nav-link">Listar Analistas</a>   
+    <a href="/cadastrarModelo" class="nav-link">Cadastrar Modelo</a>   
+    <a href="/cadastrarEquipamento" class="nav-link">Cadastrar Equipamento</a>
+
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -17,19 +26,6 @@
                     hello {{ auth::user()->NomeAnalista}} <br><br>
 
                     You are logged in!
-
-                    <br>
-                    <a href="/cadastroFabricante">Cadastrar Fabricante</a>
-                    <br>
-                    <a href="/cadastroAnalista">Cadastrar Analista</a>
-                    <br>
-                    <a href="/cadastroTipo">Cadastrar Tipo</a>
-                    <br>
-                    <a href="/listagemAnalistas">Listar Analistas</a>
-                    <br>
-                    <a href="/cadastrarModelo">Cadastrar Modelo</a>
-                    <br>
-                    <a href="/cadastrarEquipamento">Cadastrar Equipamento</a>
                 </div>
             </div>
         </div>
