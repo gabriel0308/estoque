@@ -120,9 +120,10 @@ class ComputadorController extends Controller
 
     }
     
-    public function listarModeloAjax($idFabricante, $idTipo)
+    public function listarModeloAjax($idTipo, $idFabricante)
     {
         $modelos = Modelo::where("IdFabricante", $idFabricante)
+                            ->select('Modelo.IdModelo','Modelo.NomeModelo')
                             ->where("IdTipo", $idTipo)
                             ->get();
         return json_encode($modelos);
