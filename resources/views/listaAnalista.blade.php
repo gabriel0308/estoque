@@ -3,35 +3,35 @@
 @section('content')
 
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Analistas') }}</div>
+    <div class="section">
+        <div class="row">
+            <div class="col s12 m12 l10">
+                <div class="card-panel">
+                    <h4 class="header2">{{ __('Analistas') }}</h4>
 
-                <div class="card-body">
-                    <form method="POST" action="{{'gravarAnalista'}}">
-                        @csrf
+                    <div class="card-body">
 
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Nome</th>
-                                    <th>Matricula</th>                                    
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($analistas as $analista)
-                                <tr>
-                                    <th>{{$analista->NomeAnalista}}</th>
-                                    <th>{{$analista->MatriculaAnalista}}</th>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>                        
+                            <table class="table highlight">
+                                <thead>
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>Matricula</th>                                    
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($analistas as $analista)
+                                    <tr>
+                                        <th>{{$analista->NomeAnalista}}</th>
+                                        <th>{{$analista->MatriculaAnalista}}</th>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>                        
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div> 
 </div>
 
 
