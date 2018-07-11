@@ -4,7 +4,7 @@
 <div class="container">
     <div id="basic-form" class="section">
         <div class="row">  
-            <div class="col s12 m12 l5">   
+            <div class="col s12 m12 l6 offset-l3">   
                 <div class="card-panel">
                     <h4 class="header2">Login</h4>
                         <div class="row">
@@ -34,7 +34,7 @@
 
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <button type="submit" class="btn cyan waves-effect waves-light right">
+                                        <button type="submit" class="btn pink darken-2 waves-effect waves-light right">
                                             {{ __('Entrar') }}
                                         </button>
                                     </div>
