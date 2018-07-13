@@ -57,6 +57,24 @@ IdTipo double PRIMARY KEY AUTO_INCREMENT,
 NomeTipo varchar(20)
 );
 
+CREATE TABLE Periferico (
+IdPeriferico double PRIMARY KEY,
+IdModelo double,
+StatusPeriferico Varchar(20),
+FOREIGN KEY(IdModelo) REFERENCES Modelo (IdModelo)
+);
+
+CREATE TABLE MovPeriferico (
+IdMovPeriferico double PRIMARY KEY,
+IdPeriferico double,
+IdAnalista double,
+TipoMovPeriferico Varchar(20),
+DataMovPeriferico date,
+MatriculaUsuario varchar(8),
+FOREIGN KEY(IdPeriferico) REFERENCES Periferico (IdPeriferico),
+FOREIGN KEY(IdAnalista) REFERENCES Analista (IdAnalista)
+);
+
 ALTER TABLE Software ADD CONSTRAINT FOREIGN KEY(IdComp) REFERENCES Computador (IdComp);
 ALTER TABLE Movimentacao ADD CONSTRAINT FOREIGN KEY(IdComp) REFERENCES Computador (IdComp);
 ALTER TABLE Computador ADD CONSTRAINT FOREIGN KEY(IdModelo) REFERENCES Modelo (IdModelo);
@@ -66,3 +84,5 @@ insert into analista values ('', 'cs261967', 'Gabriel', sha1('9F90amv8'));
 select * from analista;
 
 ALTER TABLE analista ADD remember_token varchar(60);
+ALTER TABLE analista ADD guard varchar(10);
+ALTER TABLE Computador ADD LacreComp varchar(8);

@@ -31,12 +31,12 @@
         
             <nav class="pink darken-4">
                 <div class="container">
-                    <div class="nav-wrapper ">
+                    <div class="nav-wrapper col s8 m12 l12">
                         <ul id="nav-mobile" class="left hide-on-med-and-down">
                             @guest
-                                <li><a class="navbar-brand" href="{{ url('/') }}">Estoque</a></li>
+                                <li><a class="navbar-brand" href="{{ url('/') }}"><img src="{{asset('img\logo.png')}}"></a></li>
                             @else
-                                <li><a class="navbar-brand" href="{{ url('/') }}">Estoque</a></li>
+                                <li><a class="navbar-brand" href="{{ url('/') }}"><img class="responsive-img" src="{{asset('img\logo.png')}}"></a></li>
                                 <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Gerenciar Analistas<i class="material-icons right">arrow_drop_down</i></a></li>
                                 <li><a class="navbar-brand" href="/cadastroFabricante">Fabricante</a></li>
                                 <li><a class="navbar-brand" href="/cadastroTipo">Tipo</a></li>

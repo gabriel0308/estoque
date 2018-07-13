@@ -47,7 +47,7 @@
                           </div>
                         </div>
                             <div class="input-field col s12">
-                              <button class="btn cyan waves-effect waves-light right" type="submit" name="action">Gravar
+                              <button class="btn pink darken-4 waves-effect waves-light right" type="submit" name="action">Gravar
                                 <i class="mdi-content-send right"></i>
                               </button>
                             </div>
