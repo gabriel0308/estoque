@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Thu, 15 Mar 2018 14:00:19 +0000.
+ * Date: Wed, 18 Jul 2018 22:32:39 +0000.
  */
 
 namespace App\Models;
@@ -18,6 +18,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property string $HostnameComp
  * @property string $StatusComp
  * @property string $ObservacaoComp
+ * @property string $LacreComp
  * 
  * @property \App\Models\Modelo $modelo
  * @property \Illuminate\Database\Eloquent\Collection $movimentacaos
@@ -40,7 +41,8 @@ class Computador extends Eloquent
 		'SerialComp',
 		'HostnameComp',
 		'StatusComp',
-		'ObservacaoComp'
+		'ObservacaoComp',
+		'LacreComp'
 	];
 
 	public function modelo()
