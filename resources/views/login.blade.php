@@ -17,13 +17,15 @@
 											<strong>{{ session('loginErrors') }}</strong>
 										</div> --}}
 
-										<script type='text/javascript'>
+										<div class="card-panel red lighten-4"><span class="valign-wrapper red-text text-darken-4 center"><i class="material-icons small">error_outline</i>&nbsp{{ session('loginErrors') }}</span></div>
+
+										{{-- <script type='text/javascript'>
 											 $(document).ready(function() {
 
 												M.toast({html: "{{Session::get('loginErrors')}}", classes:'red accent-2'});
 
 											}); 
-										</script>
+										</script> --}}
 
 									@endif
 

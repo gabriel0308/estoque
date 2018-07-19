@@ -13,13 +13,9 @@
 									<?php if(session('loginErrors')): ?>
 										
 
-										<script type='text/javascript'>
-											 $(document).ready(function() {
+										<div class="card-panel red lighten-4"><span class="valign-wrapper red-text text-darken-4 center"><i class="material-icons small">error_outline</i>&nbsp<?php echo e(session('loginErrors')); ?></span></div>
 
-												M.toast({html: "<?php echo e(Session::get('loginErrors')); ?>", classes:'red accent-2'});
-
-											}); 
-										</script>
+										
 
 									<?php endif; ?>
 

@@ -34,7 +34,7 @@
                     <div class="nav-wrapper col s8 m12 l12">
                         <ul id="nav-mobile" class="left hide-on-med-and-down">
                             <?php if(auth()->guard()->guest()): ?>
-                                <li><a class="navbar-brand" href="<?php echo e(url('/')); ?>"><img src="<?php echo e(asset('img\logo.png')); ?>"></a></li>
+                                <li><a class="navbar-brand valign-wrapper" href="<?php echo e(url('/')); ?>"><img src="<?php echo e(asset('img\logo.png')); ?>"></a></li>
                             <?php else: ?>
                                 <li><a class="navbar-brand" href="<?php echo e(url('/')); ?>"><img class="responsive-img" src="<?php echo e(asset('img\logo.png')); ?>"></a></li>
                                 <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Gerenciar Analistas<i class="material-icons right">arrow_drop_down</i></a></li>
