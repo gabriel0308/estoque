@@ -31,52 +31,37 @@
         
             <nav class="pink darken-4">
                 <div class="container">
-                    <div class="nav-wrapper col s8 m12 l12">
-                        <ul id="nav-mobile" class="left hide-on-med-and-down">
-                            @guest
-                                <li><a class="navbar-brand valign-wrapper" href="{{ url('/') }}"><img src="{{asset('img\logo.png')}}"></a></li>
+                    <div class="nav-wrapper">
+                        <a class="brand-logo left" style="padding: 10px;" href="{{ url('/') }}"><img src="{{asset('img\logo.png')}}"></a>
+                        
+                            @guest                                
                             @else
-                                <li><a class="navbar-brand" href="{{ url('/') }}"><img class="responsive-img" src="{{asset('img\logo.png')}}"></a></li>
+                            <ul id="nav-mobile" class="right hide-on-med-and-down">
                                 <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Gerenciar Analistas<i class="material-icons right">arrow_drop_down</i></a></li>
-                                <li><a class="navbar-brand" href="/cadastroFabricante">Fabricante</a></li>
-                                <li><a class="navbar-brand" href="/cadastroTipo">Tipo</a></li>
-                                <li><a class="navbar-brand" href="/cadastrarModelo">Modelo</a></li>
-                                <li><a class="navbar-brand" href="/cadastrarEquipamento">Equipamento</a></li>       
+                                <li><a href="/cadastroFabricante">Fabricante</a></li>
+                                <li><a href="/cadastroTipo">Tipo</a></li>
+                                <li><a href="/cadastrarModelo">Modelo</a></li>
+                                <li><a href="/cadastrarEquipamento">Equipamento</a></li>
+                                <li><a class="right" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a></li>
+                            </ul>       
                             @endguest
-                        </ul>
                     </div>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                    </form>
                 
 
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <!-- Left Side Of Navbar -->
-                            <ul class="navbar-nav mr-auto">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <!-- Left Side Of Navbar -->
+                        <ul class="navbar-nav mr-auto">
 
-                            </ul>
+                        </ul>
 
-                            <!-- Right Side Of Navbar -->
-                            <ul class="navbar-nav ml-auto">
-                                <!-- Authentication Links -->
-                                @guest
-                                @else
-                                        <a id="navbarDropdown" class="" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                            {{ Auth::user()->name }} <span class="caret"></span>
-                                        </a>
-
-                                        <div class="" aria-labelledby="navbarDropdown">
-                                            <a class="right" href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                            document.getElementById('logout-form').submit();">
-                                                {{ __('Logout') }}
-                                            </a>
-
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                                @csrf
-                                            </form>
-                                        </div>
-                                    </li>
-                                @endguest
-                            </ul>
-                        </div>
+                        <!-- Right Side Of Navbar -->
+                        <ul class="navbar-nav ml-auto">
+                            <!-- Authentication Links -->
+                        </ul>
                     </div>
                 </div>
             </nav>

@@ -31,53 +31,37 @@
         
             <nav class="pink darken-4">
                 <div class="container">
-                    <div class="nav-wrapper col s8 m12 l12">
-                        <ul id="nav-mobile" class="left hide-on-med-and-down">
-                            <?php if(auth()->guard()->guest()): ?>
-                                <li><a class="navbar-brand valign-wrapper" href="<?php echo e(url('/')); ?>"><img src="<?php echo e(asset('img\logo.png')); ?>"></a></li>
+                    <div class="nav-wrapper">
+                        <a class="brand-logo left" style="padding: 10px;" href="<?php echo e(url('/')); ?>"><img src="<?php echo e(asset('img\logo.png')); ?>"></a>
+                        
+                            <?php if(auth()->guard()->guest()): ?>                                
                             <?php else: ?>
-                                <li><a class="navbar-brand" href="<?php echo e(url('/')); ?>"><img class="responsive-img" src="<?php echo e(asset('img\logo.png')); ?>"></a></li>
+                            <ul id="nav-mobile" class="right hide-on-med-and-down">
                                 <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Gerenciar Analistas<i class="material-icons right">arrow_drop_down</i></a></li>
-                                <li><a class="navbar-brand" href="/cadastroFabricante">Fabricante</a></li>
-                                <li><a class="navbar-brand" href="/cadastroTipo">Tipo</a></li>
-                                <li><a class="navbar-brand" href="/cadastrarModelo">Modelo</a></li>
-                                <li><a class="navbar-brand" href="/cadastrarEquipamento">Equipamento</a></li>       
+                                <li><a href="/cadastroFabricante">Fabricante</a></li>
+                                <li><a href="/cadastroTipo">Tipo</a></li>
+                                <li><a href="/cadastrarModelo">Modelo</a></li>
+                                <li><a href="/cadastrarEquipamento">Equipamento</a></li>
+                                <li><a class="right" href="<?php echo e(route('logout')); ?>" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><?php echo e(__('Logout')); ?></a></li>
+                            </ul>       
                             <?php endif; ?>
-                        </ul>
                     </div>
+
+                    <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">
+                            <?php echo csrf_field(); ?>
+                    </form>
                 
 
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <!-- Left Side Of Navbar -->
-                            <ul class="navbar-nav mr-auto">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <!-- Left Side Of Navbar -->
+                        <ul class="navbar-nav mr-auto">
 
-                            </ul>
+                        </ul>
 
-                            <!-- Right Side Of Navbar -->
-                            <ul class="navbar-nav ml-auto">
-                                <!-- Authentication Links -->
-                                <?php if(auth()->guard()->guest()): ?>
-                                <?php else: ?>
-                                        <a id="navbarDropdown" class="" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                            <?php echo e(Auth::user()->name); ?> <span class="caret"></span>
-                                        </a>
-
-                                        <div class="" aria-labelledby="navbarDropdown">
-                                            <a class="right" href="<?php echo e(route('logout')); ?>"
-                                            onclick="event.preventDefault();
-                                                            document.getElementById('logout-form').submit();">
-                                                <?php echo e(__('Logout')); ?>
-
-                                            </a>
-
-                                            <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">
-                                                <?php echo csrf_field(); ?>
-                                            </form>
-                                        </div>
-                                    </li>
-                                <?php endif; ?>
-                            </ul>
-                        </div>
+                        <!-- Right Side Of Navbar -->
+                        <ul class="navbar-nav ml-auto">
+                            <!-- Authentication Links -->
+                        </ul>
                     </div>
                 </div>
             </nav>
