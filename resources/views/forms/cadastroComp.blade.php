@@ -11,9 +11,9 @@
               <div class="row">
                 <div class="col s12 m12 l12">
                   <div class="card-panel">
-                    <h4 class="header2">Cadastrar Equipamento</h4>
+                    <h4 class="header2">Cadastrar Computador</h4>
                     <div class="row">
-                      <form form method="POST" action="{{'gravarAnalista'}}" class="col s12">
+                      <form form method="POST" action="gravarComputador" class="col s12">
                         @csrf
                         <div class="row">
                           <div class="input-field col s6">
@@ -26,9 +26,25 @@
                           </div>
                         </div>
                         <div class="row">
+                          <div class="input-field col s6">
+                              <input id="StatusComp" type="text" name="StatusComp" required>
+                              <label for="StatusComp">Status</label>
+                          </div>
+                          <div class="input-field col s6">
+                              <input id="LacreComp" type="text" name="LacreComp">
+                              <label for="LacreComp">Lacre</label>
+                          </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <textarea id="ObservacaoComp" class="materialize-textarea" lenght="250"></textarea>
+                                <label for="ObservacaoComp">Observação</label>
+                            </div>
+                        </div>
+                        <div class="row">
                           <div class="input-field col s4">
                             <select name="IdTipo" id="IdTipo">
-                                <option value="" disabled selected>Choose your option</option>
+                                <option value="" disabled selected>Escolha o Tipo de Computador</option>
                                 @foreach ($tipos as $tipo)
                                     <option value="{{$tipo->IdTipo}}">{{$tipo->NomeTipo}}</option>                                        
                                 @endforeach

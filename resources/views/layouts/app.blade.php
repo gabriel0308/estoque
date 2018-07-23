@@ -10,59 +10,62 @@
 
     <title>Estoque</title>
 
+    <!-- Materialize -->
+    {!! MaterializeCSS::include_full() !!}  
+
     <!-- Scripts -->
 
     <!-- Fonts -->
-    <!-- <link rel="dns-prefetch" href="https://fonts.gstatic.com"> -->
-
+    
     <!-- Styles -->
 
-    <!-- Materialize -->
-    {!! MaterializeCSS::include_full() !!}    
     
 </head>
 <body>
     <div id="app">
         
-            <ul id="dropdown1" class="dropdown-content">
-                    <li><a href="/cadastroAnalista" class="dropdown-item">Cadastrar Analista</a></li>
-                    <li><a href="/listagemAnalistas" class="dropdown-item">Listar Analistas</a></li>
+            <ul id="dropdown1" class="dropdown-content pink darken-4">
+                    <li><a href="/cadastroAnalista" class="dropdown-item white-text">Cadastrar Analista</a></li>
+                    <li><a href="/listagemAnalistas" class="dropdown-item white-text">Listar Analistas</a></li>
+            </ul>
+
+            <ul id="dropdown2" class="dropdown-content pink darken-4">
+                    <li><a href="/cadastroAnalista" class="dropdown-item white-text">Cadastrar Analista</a></li>
+                    <li><a href="/listagemAnalistas" class="dropdown-item white-text">Listar Analistas</a></li>
             </ul>
         
             <nav class="pink darken-4">
                 <div class="container">
                     <div class="nav-wrapper">
-                        <a class="brand-logo left" style="padding: 10px;" href="{{ url('/') }}"><img src="{{asset('img\logo.png')}}"></a>
+                        <a class="brand-logo" style="padding: 10px;" href="{{ url('/') }}"><img src="{{asset('img\logo.png')}}"></a>
                         
                             @guest                                
                             @else
-                            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                            <ul class="right hide-on-med-and-down" id="nav-mobile">
                                 <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Gerenciar Analistas<i class="material-icons right">arrow_drop_down</i></a></li>
                                 <li><a href="/cadastroFabricante">Fabricante</a></li>
                                 <li><a href="/cadastroTipo">Tipo</a></li>
                                 <li><a href="/cadastrarModelo">Modelo</a></li>
-                                <li><a href="/cadastrarEquipamento">Equipamento</a></li>
+                                <li><a href="/cadastrarComputador">Computador</a></li>
                                 <li><a class="right" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a></li>
+                            </ul>
+                            
+                            <ul class="sidenav pink darken-4" id="mobile-demo">
+                                <li><a class="dropdown-trigger white-text" href="#!" data-target="dropdown2">Gerenciar Analistas<i class="material-icons right white-text">arrow_drop_down</i></a></li>
+                                <li><a class="white-text" href="/cadastroFabricante">Fabricante</a></li>
+                                <li><a class="white-text" href="/cadastroTipo">Tipo</a></li>
+                                <li><a class="white-text" href="/cadastrarModelo">Modelo</a></li>
+                                <li><a class="white-text" href="/cadastrarComputador">Computador</a></li>
+                                <li><a class="white-text" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a></li>
                             </ul>       
+
                             @endguest
                     </div>
 
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                     </form>
-                
-
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <!-- Left Side Of Navbar -->
-                        <ul class="navbar-nav mr-auto">
-
-                        </ul>
-
-                        <!-- Right Side Of Navbar -->
-                        <ul class="navbar-nav ml-auto">
-                            <!-- Authentication Links -->
-                        </ul>
-                    </div>
                 </div>
             </nav>
 

@@ -35,7 +35,7 @@
 
 								<div class="row">
 									<div class="input-field col s12">
-										<button type="submit" class="btn pink darken-2 waves-effect waves-light right">
+										<button type="submit" class="btn pink darken-4 waves-effect waves-light right">
 											<?php echo e(__('Entrar')); ?>
 
 										</button>

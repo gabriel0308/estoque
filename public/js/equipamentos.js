@@ -9,7 +9,7 @@ $(document).ready(function () {
         if (idTipo) {
 
             $.ajax({
-                url: 'cadastrarEquipamento/ajax/tipo/' + idTipo,
+                url: 'cadastrarComputador/ajax/tipo/' + idTipo,
                 type: "get",
                 dataType: "json",
                 success: function (data) {
@@ -51,7 +51,7 @@ $(document).ready(function () {
             if (idFabricante) {
 
                 $.ajax({
-                    url: 'cadastrarEquipamento/ajax/tipo/' + idTipo + '/fabricante/' + idFabricante,
+                    url: 'cadastrarComputador/ajax/tipo/' + idTipo + '/fabricante/' + idFabricante,
                     type: "get",
                     dataType: "json",
                     success: function (data) {

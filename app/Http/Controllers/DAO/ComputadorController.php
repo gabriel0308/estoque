@@ -39,7 +39,18 @@ class ComputadorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $computador = new Computador;
+        $modelo = Modelo::find($request->IdModelo);
+        $computador->SerialComp = $request->SerialComp;
+        $computador->HostnameComp = $request->HostnameComp;
+        $computador->StatusComp = $request->StatusComp;
+        $computador->ObservacaoComp = $request->ObservacaoComp;
+        $computador->LacreComp = $request->LacreComp;
+        $computador->modelo()->associate($modelo);
+        $computador->save();
+        return redirect()->back();
+
     }
 
     /**
@@ -87,25 +98,12 @@ class ComputadorController extends Controller
         //
     }
 
-    public function cadastrarEquipamento(){
-        $modelos = Modelo::join('Fabricante', 'Fabricante.IdFabricante', '=', 'Modelo.IdFabricante')
-                            ->join('Tipo', 'Tipo.IdTipo', '=', 'Modelo.IdTipo')
-                            ->get();
-
-        // $fabricantes = Fabricante::orderBy('NomeFabricante', 'asc')
-        //                     ->get();
-
-        $fabricantes =  Modelo::join('Fabricante', 'Fabricante.IdFabricante', '=', 'Modelo.IdFabricante')
-                                ->select('Fabricante.IdFabricante', 'Fabricante.NomeFabricante')
-                                ->where('Modelo.IdTipo', '=', 2)
-                                ->distinct('Fabricante.IdFabricante')
-                                ->orderBy('Fabricante.NomeFabricante', 'asc')
-                                ->get();
+    public function cadastrarComp(){
 
         $tipos = Tipo::orderBy('NomeTipo', 'asc')
                             ->get();
 
-        return view('forms\cadastroEquipamento', compact('modelos', 'tipos', 'fabricantes'));
+        return view('forms\cadastroComp', compact('tipos'));
     }
 
     public function listarFabricanteAjax($idTipo)
