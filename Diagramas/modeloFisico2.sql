@@ -11,7 +11,7 @@ NomeFabricante varchar(20)
 );
 
 CREATE TABLE Tipo (
-Idtipo double PRIMARY KEY,
+IdTipo double PRIMARY KEY AUTO_INCREMENT,
 NomeTipo varchar(20)
 );
 
@@ -38,7 +38,7 @@ IdFabricante double,
 IdTipo double,
 NomeModelo varchar(20),
 FOREIGN KEY(IdFabricante) REFERENCES Fabricante (IdFabricante),
-FOREIGN KEY(IdTipo) REFERENCES Tipo (Idtipo)
+FOREIGN KEY(IdTipo) REFERENCES Tipo (IdTipo)
 );
 
 CREATE TABLE Periferico (

@@ -50,11 +50,14 @@ class LoginController extends Controller
        if($logins != null)
         {
            
-            Auth::loginUsingId($logins->IdAnalista);
             if($logins->guard == 'Admin'){
 
-                Auth::guard('admin');
+                Auth::guard('admin')->loginUsingId($logins->IdAnalista);
+                Auth::loginUsingId($logins->IdAnalista);
                 
+            }
+            Else{            
+                Auth::loginUsingId($logins->IdAnalista);
             }
             return view('home');
 

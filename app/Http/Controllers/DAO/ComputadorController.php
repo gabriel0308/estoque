@@ -127,4 +127,11 @@ class ComputadorController extends Controller
         return json_encode($modelos);
     }
 
+    public function listagemComputadores() 
+    {
+        $computadores = Computador::orderBy('IdModelo', 'asc')
+        ->get();
+        return view('listas\listaComputador', compact('computadores'));
+    }
+
 }

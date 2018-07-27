@@ -35,7 +35,7 @@ Route::resource('tipo','DAO\TipoController');
 #Analista
 Route::view('/cadastroAnalista', 'forms\cadastroAnalista')->middleware('checkAdmin');
 Route::post('gravarAnalista', 'DAO\AnalistaController@store')->middleware('checkAdmin');
-Route::get('/listagemAnalistas','DAO\AnalistaController@listagemAnalistas')->middleware('auth');
+Route::get('/listagemAnalistas','DAO\AnalistaController@listagemAnalistas')->middleware('checkAdmin');
 
 #Fabricante
 Route::view('/cadastroFabricante', 'forms\cadastroFabricante')->middleware('auth');
@@ -49,9 +49,10 @@ Route::post('gravarTipo', 'DAO\TipoController@store')->middleware('auth');
 Route::get('cadastrarModelo','DAO\ModeloController@cadastrarModelo')->middleware('auth');
 Route::post('gravarModelo', 'DAO\ModeloController@store')->middleware('auth');
 
-#Equipamento   
+#Computador   
 Route::get('cadastrarComputador','DAO\ComputadorController@cadastrarComp')->middleware('auth');
 Route::post('gravarComputador','DAO\ComputadorController@store')->middleware('auth');
 Route::get('cadastrarComputador/ajax/tipo/{id}',array('as' => 'ListaFabricante.ajax', 'uses'=>'DAO\ComputadorController@listarFabricanteAjax'))->middleware('auth');
 Route::get('cadastrarComputador/ajax/tipo/{idTipo}/fabricante/{idFabricante}',array('as' => 'ListaModelo.ajax', 'uses'=>'DAO\ComputadorController@listarModeloAjax'))->middleware('auth');
+Route::get('listagemComputadores', 'DAO\ComputadorController@listagemComputadores')->middleware('auth');
 
