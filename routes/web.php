@@ -33,8 +33,8 @@ Route::resource('software','DAO\SoftwareController');
 Route::resource('tipo','DAO\TipoController');
 
 #Analista
-Route::view('/cadastroAnalista', 'forms\cadastroAnalista')->middleware('auth');
-Route::post('gravarAnalista', 'DAO\AnalistaController@store')->middleware('auth');
+Route::view('/cadastroAnalista', 'forms\cadastroAnalista')->middleware('checkAdmin');
+Route::post('gravarAnalista', 'DAO\AnalistaController@store')->middleware('checkAdmin');
 Route::get('/listagemAnalistas','DAO\AnalistaController@listagemAnalistas')->middleware('auth');
 
 #Fabricante

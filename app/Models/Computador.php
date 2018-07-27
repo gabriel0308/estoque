@@ -33,7 +33,8 @@ class Computador extends Eloquent
 	public $timestamps = false;
 
 	protected $casts = [
-		'IdModelo' => 'float'
+		'IdModelo' => 'float',
+		'IdAnalista' => 'float'
 	];
 
 	protected $fillable = [
@@ -48,6 +49,11 @@ class Computador extends Eloquent
 	public function modelo()
 	{
 		return $this->belongsTo(\App\Models\Modelo::class, 'IdModelo');
+	}
+
+	public function analista()
+	{
+		return $this->belongsTo(\App\Models\Analista::class, 'IdAnalista');
 	}
 
 	public function movimentacaos()

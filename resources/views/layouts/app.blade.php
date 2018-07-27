@@ -25,12 +25,16 @@
     <div id="app">
         
             <ul id="dropdown1" class="dropdown-content pink darken-4">
+                @auth('admin')
                     <li><a href="/cadastroAnalista" class="dropdown-item white-text">Cadastrar Analista</a></li>
+                @endauth
                     <li><a href="/listagemAnalistas" class="dropdown-item white-text">Listar Analistas</a></li>
             </ul>
 
             <ul id="dropdown2" class="dropdown-content pink darken-4">
+                @auth('admin')
                     <li><a href="/cadastroAnalista" class="dropdown-item white-text">Cadastrar Analista</a></li>
+                @endauth
                     <li><a href="/listagemAnalistas" class="dropdown-item white-text">Listar Analistas</a></li>
             </ul>
         
