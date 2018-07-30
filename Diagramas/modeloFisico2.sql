@@ -20,7 +20,7 @@ IdMovimentacao double PRIMARY KEY AUTO_INCREMENT,
 IdComp double,
 IdAnalista double,
 TipoMovimentacao varchar(20),
-DataMovimentacao date,
+DataMovimentacao timestamp DEFAULT CURRENT_TIMESTAMP,
 MatriculaUsuario varchar(8)
 );
 
@@ -45,6 +45,7 @@ CREATE TABLE Periferico (
 IdPeriferico double PRIMARY KEY AUTO_INCREMENT,
 IdModelo double,
 StatusPeriferico Varchar(20),
+DataCadastroPeriferico timestamp DEFAULT CURRENT_TIMESTAMP,
 FOREIGN KEY(IdModelo) REFERENCES Modelo (IdModelo)
 );
 
@@ -53,7 +54,7 @@ IdMovPeriferico double PRIMARY KEY AUTO_INCREMENT,
 IdPeriferico double,
 IdAnalista double,
 TipoMovPeriferico Varchar(20),
-DataMovPeriferico date,
+DataMovPeriferico timestamp DEFAULT CURRENT_TIMESTAMP,
 MatriculaUsuario varchar(8),
 FOREIGN KEY(IdPeriferico) REFERENCES Periferico (IdPeriferico)
 );
@@ -76,6 +77,7 @@ HostnameComp varchar(20),
 StatusComp varchar(20),
 ObservacaoComp varchar(250),
 LacreComp varchar(8),
+DataCadastroComp timestamp DEFAULT CURRENT_TIMESTAMP,
 FOREIGN KEY(IdModelo) REFERENCES Modelo (IdModelo),
 FOREIGN KEY(IdAnalista) REFERENCES Analista (IdAnalista)
 );

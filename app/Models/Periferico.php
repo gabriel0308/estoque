@@ -15,6 +15,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property float $IdPeriferico
  * @property float $IdModelo
  * @property string $StatusPeriferico
+ * @property \Carbon\Carbon $DataCadastroPeriferico
  * 
  * @property \App\Models\Modelo $modelo
  * @property \Illuminate\Database\Eloquent\Collection $movperifericos
@@ -35,7 +36,8 @@ class Periferico extends Eloquent
 
 	protected $fillable = [
 		'IdModelo',
-		'StatusPeriferico'
+		'StatusPeriferico',
+		'DataCadastroPeriferico'
 	];
 
 	public function modelo()

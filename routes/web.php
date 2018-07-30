@@ -55,4 +55,5 @@ Route::post('gravarComputador','DAO\ComputadorController@store')->middleware('au
 Route::get('cadastrarComputador/ajax/tipo/{id}',array('as' => 'ListaFabricante.ajax', 'uses'=>'DAO\ComputadorController@listarFabricanteAjax'))->middleware('auth');
 Route::get('cadastrarComputador/ajax/tipo/{idTipo}/fabricante/{idFabricante}',array('as' => 'ListaModelo.ajax', 'uses'=>'DAO\ComputadorController@listarModeloAjax'))->middleware('auth');
 Route::get('listagemComputadores', 'DAO\ComputadorController@listagemComputadores')->middleware('auth');
+Route::get('listagemComputadores/ajax/{search}', 'DAO\ComputadorController@searchAjax')->middleware('auth');
 

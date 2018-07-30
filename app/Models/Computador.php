@@ -19,6 +19,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property string $StatusComp
  * @property string $ObservacaoComp
  * @property string $LacreComp
+ * @property \Carbon\Carbon $DataCadastroComp
  * 
  * @property \App\Models\Modelo $modelo
  * @property \Illuminate\Database\Eloquent\Collection $movimentacaos
@@ -43,7 +44,8 @@ class Computador extends Eloquent
 		'HostnameComp',
 		'StatusComp',
 		'ObservacaoComp',
-		'LacreComp'
+		'LacreComp',
+		'DataCadastroComp'
 	];
 
 	public function modelo()
