@@ -45,7 +45,8 @@
                                     </tr>
                                     @endforeach
                                 </tbody>
-                            </table>                    
+                            </table>
+                            {{$computadores->links()}}
                     </div>
                 </div>
             </div>

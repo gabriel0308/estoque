@@ -135,14 +135,14 @@ class ComputadorController extends Controller
                         ->join('tipo', 'tipo.IdTipo', '=', 'modelo.IdTipo')
                         ->join('fabricante', 'fabricante.IdFabricante', '=', 'modelo.IdFabricante')
                         ->select('tipo.NomeTipo', 'computador.HostnameComp', 'computador.SerialComp', 'modelo.NomeModelo', 'computador.StatusComp', 'computador.ObservacaoComp', 'computador.LacreComp', 'computador.DataCadastroComp', 'analista.NomeAnalista')
-                        ->get();
+                        ->paginate(15);
         return view('listas\listaComputador', compact('computadores'));
     }
 
     public function searchAjax($search)
     {
         $computadores = Computador::where('computador.HostnameComp', '=', '%'.$search.'%')
-                        ->orWhere('computador.HostnameComp', '=', '%'.$search.'%')
+                        ->orWhere('computador.SerialComp', '=', '%'.$search.'%')
                         ->get();
         return json_encode($computadoresAjax);
     }
