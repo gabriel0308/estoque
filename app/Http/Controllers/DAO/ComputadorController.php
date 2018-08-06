@@ -60,7 +60,7 @@ class ComputadorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Computador $computador)
-    {
+    { 
         //
     }
 

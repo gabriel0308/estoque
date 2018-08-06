@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="estoque" version="4">
+  <OBJECT>
+    <ID name="estoque" mc="Standard.Package" uid="9443703a-6c2d-436c-a41b-fae937951bc8"/>
+    <PID name="Estoque" mc="Standard.Project" uid="9a53a4fe-768e-4837-bdb1-46aa405a67c4"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[estoque]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="Analista" mc="Standard.Actor" uid="8f3551e1-56f8-4808-b53a-ed005247d3f0"/>
+        <COMPID name="Gerenciar Maquinas" mc="Standard.UseCase" uid="60d81ffd-0b69-4b9c-86bd-c55b646f5229"/>
+        <COMPID name="Administrador" mc="Standard.Actor" uid="720c35d3-03af-493c-aa86-8f81b4a3538b"/>
+        <COMPID name="Gerenciar Analistas" mc="Standard.UseCase" uid="2484a002-5c78-47d5-b5cb-ae962e29fa68"/>
+        <COMPID name="Cadastrar Analistas" mc="Standard.UseCase" uid="e1da1e1e-4041-4887-b69c-e90bc1f541aa"/>
+        <COMPID name="Listar Analistas" mc="Standard.UseCase" uid="8c774d94-a940-4e73-b39b-50277e3b08ad"/>
+        <COMPID name="Editar Analistas" mc="Standard.UseCase" uid="b6526c57-07e3-4519-a36a-d28c2647505c"/>
+        <COMPID name="Gerenciar Computadores" mc="Standard.UseCase" uid="ddd73581-9282-4bec-9d15-76e4e33e5da3"/>
+        <COMPID name="Gerenciar Periféricos" mc="Standard.UseCase" uid="9af5cef9-2fa4-481d-8e2a-de3d722d602c"/>
+        <COMPID name="Cadastrar Computadores" mc="Standard.UseCase" uid="4123cb0d-b39a-4a60-88b7-0396bb16c282"/>
+        <COMPID name="Selecionar Modelo" mc="Standard.UseCase" uid="d556b0df-3f94-40ef-8bef-51a6bed46adf"/>
+        <COMPID name="Gerenciar Modelos" mc="Standard.UseCase" uid="4c77c31f-bea4-44f0-bb2c-c0594aac8bae"/>
+        <COMPID name="Listar Computadores" mc="Standard.UseCase" uid="c089a28e-a2cc-4ee2-87ef-2472d34197f6"/>
+        <COMPID name="Editar Computadores" mc="Standard.UseCase" uid="01cfc054-8223-4449-8d83-ab6500ef3701"/>
+        <COMPID name="Cadastrar Periféricos" mc="Standard.UseCase" uid="cd0105c9-7f25-4498-8828-2fda10c4d526"/>
+        <COMPID name="Listar Periféricos" mc="Standard.UseCase" uid="1caa6f30-342a-426f-be51-3c9ddfb3d67e"/>
+        <COMPID name="Editar Perifericos" mc="Standard.UseCase" uid="9dd10055-fff9-44ee-a151-3d7d709af692"/>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="nivel 1" mc="Standard.UseCaseDiagram" uid="a49a0c4d-70e3-4a28-aa5c-e1a789f7b083"/>
+        <COMPID name="Gerenciar Analistas" mc="Standard.UseCaseDiagram" uid="d2f7fa93-a431-42d9-b947-4905f2f9424c"/>
+        <COMPID name="Gerenciar Maquinas" mc="Standard.UseCaseDiagram" uid="956eacf8-edbf-4cca-a473-ced5b1507482"/>
+        <COMPID name="Gerenciar Computadores" mc="Standard.UseCaseDiagram" uid="8dadcfaa-10eb-4e89-a05a-2313e4b974af"/>
+        <COMPID name="Gerenciar Periféricos" mc="Standard.UseCaseDiagram" uid="ddf03023-b02c-4cc5-b046-e3124218aff4"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>
