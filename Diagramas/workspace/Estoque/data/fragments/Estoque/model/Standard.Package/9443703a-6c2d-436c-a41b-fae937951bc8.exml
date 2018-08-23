@@ -24,13 +24,13 @@
         <COMPID name="Gerenciar Computadores" mc="Standard.UseCase" uid="ddd73581-9282-4bec-9d15-76e4e33e5da3"/>
         <COMPID name="Gerenciar Periféricos" mc="Standard.UseCase" uid="9af5cef9-2fa4-481d-8e2a-de3d722d602c"/>
         <COMPID name="Cadastrar Computadores" mc="Standard.UseCase" uid="4123cb0d-b39a-4a60-88b7-0396bb16c282"/>
-        <COMPID name="Selecionar Modelo" mc="Standard.UseCase" uid="d556b0df-3f94-40ef-8bef-51a6bed46adf"/>
         <COMPID name="Gerenciar Modelos" mc="Standard.UseCase" uid="4c77c31f-bea4-44f0-bb2c-c0594aac8bae"/>
         <COMPID name="Listar Computadores" mc="Standard.UseCase" uid="c089a28e-a2cc-4ee2-87ef-2472d34197f6"/>
         <COMPID name="Editar Computadores" mc="Standard.UseCase" uid="01cfc054-8223-4449-8d83-ab6500ef3701"/>
         <COMPID name="Cadastrar Periféricos" mc="Standard.UseCase" uid="cd0105c9-7f25-4498-8828-2fda10c4d526"/>
         <COMPID name="Listar Periféricos" mc="Standard.UseCase" uid="1caa6f30-342a-426f-be51-3c9ddfb3d67e"/>
         <COMPID name="Editar Perifericos" mc="Standard.UseCase" uid="9dd10055-fff9-44ee-a151-3d7d709af692"/>
+        <COMPID name="Gerenciar Modelos de Periféricos" mc="Standard.UseCase" uid="69080640-106f-4068-bb4d-abca982d7fd5"/>
       </COMP>
       <COMP relation="Product">
         <COMPID name="nivel 1" mc="Standard.UseCaseDiagram" uid="a49a0c4d-70e3-4a28-aa5c-e1a789f7b083"/>
