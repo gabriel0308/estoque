@@ -31,6 +31,8 @@
         <COMPID name="Listar Periféricos" mc="Standard.UseCase" uid="1caa6f30-342a-426f-be51-3c9ddfb3d67e"/>
         <COMPID name="Editar Perifericos" mc="Standard.UseCase" uid="9dd10055-fff9-44ee-a151-3d7d709af692"/>
         <COMPID name="Gerenciar Modelos de Periféricos" mc="Standard.UseCase" uid="69080640-106f-4068-bb4d-abca982d7fd5"/>
+        <COMPID name="Movimentar Perifericos" mc="Standard.UseCase" uid="ef236214-61fa-420b-9c3b-ec563a522f77"/>
+        <COMPID name="Movimentar Computadores" mc="Standard.UseCase" uid="1d7a4337-2e1e-42f0-badf-02946646d513"/>
       </COMP>
       <COMP relation="Product">
         <COMPID name="nivel 1" mc="Standard.UseCaseDiagram" uid="a49a0c4d-70e3-4a28-aa5c-e1a789f7b083"/>
