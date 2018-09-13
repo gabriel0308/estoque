@@ -1,0 +1,3 @@
+- Criar Tela para Cadastro de Ticket de solicitação. (Realizara o vínculo com o usuário)
+
+- Criar tela para cadastro de Movimentação de Equipamento (Realiza o vículo do ticket com o computador. O termo de responsabilidade será gerado a partir da movimentação).
