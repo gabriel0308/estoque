@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Wed, 18 Jul 2018 22:32:39 +0000.
+ * Date: Wed, 19 Sep 2018 21:22:23 +0000.
  */
 
 namespace App\Models;
@@ -15,12 +15,13 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property float $IdMovimentacao
  * @property float $IdComp
  * @property float $IdAnalista
+ * @property float $IdTicket
  * @property string $TipoMovimentacao
  * @property \Carbon\Carbon $DataMovimentacao
- * @property string $MatriculaUsuario
  * 
- * @property \App\Models\Analistum $analistum
  * @property \App\Models\Computador $computador
+ * @property \App\Models\Analistum $analistum
+ * @property \App\Models\Ticket $ticket
  *
  * @package App\Models
  */
@@ -32,7 +33,8 @@ class Movimentacao extends Eloquent
 
 	protected $casts = [
 		'IdComp' => 'float',
-		'IdAnalista' => 'float'
+		'IdAnalista' => 'float',
+		'IdTicket' => 'float'
 	];
 
 	protected $dates = [
@@ -42,18 +44,23 @@ class Movimentacao extends Eloquent
 	protected $fillable = [
 		'IdComp',
 		'IdAnalista',
+		'IdTicket',
 		'TipoMovimentacao',
-		'DataMovimentacao',
-		'MatriculaUsuario'
+		'DataMovimentacao'
 	];
+
+	public function computador()
+	{
+		return $this->belongsTo(\App\Models\Computador::class, 'IdComp');
+	}
 
 	public function analistum()
 	{
 		return $this->belongsTo(\App\Models\Analistum::class, 'IdAnalista');
 	}
 
-	public function computador()
+	public function ticket()
 	{
-		return $this->belongsTo(\App\Models\Computador::class, 'IdComp');
+		return $this->belongsTo(\App\Models\Ticket::class, 'IdTicket');
 	}
 }

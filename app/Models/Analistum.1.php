@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Wed, 19 Sep 2018 21:22:23 +0000.
+ * Date: Wed, 19 Sep 2018 20:30:17 +0000.
  */
 
 namespace App\Models;
@@ -32,6 +32,7 @@ use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
  *
  * @package App\Models
  */
+
 class Analistum extends Eloquent implements
 AuthenticatableContract,
 AuthorizableContract,
@@ -39,7 +40,7 @@ CanResetPasswordContract
 {
 	
 	use Authenticatable, Authorizable, CanResetPassword;
-	
+
 	protected $primaryKey = 'IdAnalista';
 	public $timestamps = false;
 

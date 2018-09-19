@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Wed, 18 Jul 2018 22:32:39 +0000.
+ * Date: Wed, 19 Sep 2018 21:22:23 +0000.
  */
 
 namespace App\Models;
@@ -14,6 +14,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * 
  * @property float $IdComp
  * @property float $IdModelo
+ * @property float $IdAnalista
  * @property string $SerialComp
  * @property string $HostnameComp
  * @property string $StatusComp
@@ -22,6 +23,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property \Carbon\Carbon $DataCadastroComp
  * 
  * @property \App\Models\Modelo $modelo
+ * @property \App\Models\Analistum $analistum
  * @property \Illuminate\Database\Eloquent\Collection $movimentacaos
  * @property \Illuminate\Database\Eloquent\Collection $software
  *
@@ -38,8 +40,13 @@ class Computador extends Eloquent
 		'IdAnalista' => 'float'
 	];
 
+	protected $dates = [
+		'DataCadastroComp'
+	];
+
 	protected $fillable = [
 		'IdModelo',
+		'IdAnalista',
 		'SerialComp',
 		'HostnameComp',
 		'StatusComp',
@@ -53,9 +60,9 @@ class Computador extends Eloquent
 		return $this->belongsTo(\App\Models\Modelo::class, 'IdModelo');
 	}
 
-	public function analista()
+	public function analistum()
 	{
-		return $this->belongsTo(\App\Models\Analista::class, 'IdAnalista');
+		return $this->belongsTo(\App\Models\Analistum::class, 'IdAnalista');
 	}
 
 	public function movimentacaos()

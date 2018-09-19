@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Wed, 18 Jul 2018 22:32:39 +0000.
+ * Date: Wed, 19 Sep 2018 21:22:23 +0000.
  */
 
 namespace App\Models;
@@ -13,11 +13,10 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * Class Periferico
  * 
  * @property float $IdPeriferico
- * @property float $IdModelo
  * @property string $StatusPeriferico
- * @property \Carbon\Carbon $DataCadastroPeriferico
+ * @property float $IdModeloPeriferico
  * 
- * @property \App\Models\Modelo $modelo
+ * @property \App\Models\Modeloperiferico $modeloperiferico
  * @property \Illuminate\Database\Eloquent\Collection $movperifericos
  *
  * @package App\Models
@@ -26,23 +25,20 @@ class Periferico extends Eloquent
 {
 	protected $table = 'periferico';
 	protected $primaryKey = 'IdPeriferico';
-	public $incrementing = false;
 	public $timestamps = false;
 
 	protected $casts = [
-		'IdPeriferico' => 'float',
-		'IdModelo' => 'float'
+		'IdModeloPeriferico' => 'float'
 	];
 
 	protected $fillable = [
-		'IdModelo',
 		'StatusPeriferico',
-		'DataCadastroPeriferico'
+		'IdModeloPeriferico'
 	];
 
-	public function modelo()
+	public function modeloperiferico()
 	{
-		return $this->belongsTo(\App\Models\Modelo::class, 'IdModelo');
+		return $this->belongsTo(\App\Models\Modeloperiferico::class, 'IdModeloPeriferico');
 	}
 
 	public function movperifericos()
