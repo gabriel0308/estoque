@@ -32,7 +32,9 @@
         <COMPID name="Editar Perifericos" mc="Standard.UseCase" uid="9dd10055-fff9-44ee-a151-3d7d709af692"/>
         <COMPID name="Gerenciar Modelos de Periféricos" mc="Standard.UseCase" uid="69080640-106f-4068-bb4d-abca982d7fd5"/>
         <COMPID name="Movimentar Perifericos" mc="Standard.UseCase" uid="ef236214-61fa-420b-9c3b-ec563a522f77"/>
-        <COMPID name="Movimentar Computadores" mc="Standard.UseCase" uid="1d7a4337-2e1e-42f0-badf-02946646d513"/>
+        <COMPID name="Cadastrar Modelo" mc="Standard.UseCase" uid="230d0694-c03b-4f9a-8ced-d4f26ae95320"/>
+        <COMPID name="Cadastrar Marca" mc="Standard.UseCase" uid="8562301c-2ff8-43a3-9439-da376d5af4f9"/>
+        <COMPID name="Cadastrar Tipo" mc="Standard.UseCase" uid="386cc87f-ff57-4b27-9e03-ff1cdbef2e83"/>
       </COMP>
       <COMP relation="Product">
         <COMPID name="nivel 1" mc="Standard.UseCaseDiagram" uid="a49a0c4d-70e3-4a28-aa5c-e1a789f7b083"/>
