@@ -13,11 +13,28 @@
       <ATT name="status">1970354901745664</ATT>
     </ATTRIBUTES>
     <DEPENDENCIES>
+      <COMP relation="ConstraintDefinition">
+        <OBJECT>
+          <ID name="Scenario" mc="Standard.Constraint" uid="42f7b9e0-1f26-45e4-ab21-53a767b8db3b"/>
+          <ATTRIBUTES>
+            <ATT name="BaseClass"></ATT>
+            <ATT name="Body"></ATT>
+            <ATT name="Language"></ATT>
+            <ATT name="Name"><![CDATA[Scenario]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Extension">
+              <FOREIGNID name="new" mc="Infrastructure.Stereotype" uid="00700680-0000-01f9-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
       <COMP relation="Descriptor">
         <OBJECT>
           <ID name="" mc="Infrastructure.Note" uid="7772ab56-de42-4f2d-b5ff-27d6b990eead"/>
           <ATTRIBUTES>
-            <ATT name="Content"><![CDATA[...]]></ATT>
+            <ATT name="Content"><![CDATA[... Adiciona equipamento novo ao estoque]]></ATT>
             <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
             <ATT name="Name"></ATT>
             <ATT name="status">1970354901745664</ATT>
@@ -73,7 +90,7 @@
         <OBJECT>
           <ID name="" mc="Infrastructure.Note" uid="94c7c313-c76f-4021-a8fb-87042c270968"/>
           <ATTRIBUTES>
-            <ATT name="Content"><![CDATA[...]]></ATT>
+            <ATT name="Content"><![CDATA[... Analista deve estar autenticado.]]></ATT>
             <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
             <ATT name="Name"></ATT>
             <ATT name="status">1970354901745664</ATT>
@@ -87,7 +104,7 @@
         <OBJECT>
           <ID name="" mc="Infrastructure.Note" uid="e012577d-ff5f-4472-bb86-dfd7963be86b"/>
           <ATTRIBUTES>
-            <ATT name="Content"><![CDATA[...]]></ATT>
+            <ATT name="Content"><![CDATA[... Os dados do novo computador são armazenados no sistema. O equipamento cadastrado tem o status de estoque.]]></ATT>
             <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
             <ATT name="Name"></ATT>
             <ATT name="status">1970354901745664</ATT>
