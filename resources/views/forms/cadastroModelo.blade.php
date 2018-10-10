@@ -30,9 +30,9 @@
                       <label for="IdTipo">Tipo</label>
                     </div>
                     <div class="input-field col s6">
-                        <select name="IdFabricante" id="IdFabricante">
+                        <select name="IdFabricante2" id="IdFabricante2">
                             <option value="" disabled selected>Selecione o Fabricante</option>
-                            @foreach ($fabricantes as $fabricante)
+                            @foreach ($fabricantes2 as $fabricante)
                                 <option value="{{$fabricante->IdFabricante}}">{{$fabricante->NomeFabricante}}</option>                                        
                             @endforeach
                         </select>

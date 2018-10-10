@@ -8,6 +8,7 @@ use App\Models\Tipo;
 use App\Models\Fabricante;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class ComputadorController extends Controller
 {
@@ -48,6 +49,7 @@ class ComputadorController extends Controller
         $computador->ObservacaoComp = $request->ObservacaoComp;
         $computador->LacreComp = $request->LacreComp;
         $computador->modelo()->associate($modelo);
+        $computador->analistum()->associate(Auth::user());
         $computador->save();
         return redirect()->back();
 
@@ -102,8 +104,10 @@ class ComputadorController extends Controller
 
         $tipos = Tipo::orderBy('NomeTipo', 'asc')
                             ->get();
+        $fabricantes2 = Fabricante::orderBy('NomeFabricante', 'asc')
+        ->get();
 
-        return view('forms\cadastroComp', compact('tipos'));
+        return view('forms\cadastroComp', compact('tipos', 'fabricantes2'));
     }
 
     public function listarFabricanteAjax($idTipo)

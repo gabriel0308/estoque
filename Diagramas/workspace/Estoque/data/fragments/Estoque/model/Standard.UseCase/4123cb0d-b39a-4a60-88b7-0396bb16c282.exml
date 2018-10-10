@@ -13,23 +13,6 @@
       <ATT name="status">1970354901745664</ATT>
     </ATTRIBUTES>
     <DEPENDENCIES>
-      <COMP relation="Used">
-        <OBJECT>
-          <ID name="UseCaseDependency" mc="Standard.UseCaseDependency" uid="5dc18753-dd8e-4662-be85-db0889781e39"/>
-          <ATTRIBUTES>
-            <ATT name="Name"><![CDATA[UseCaseDependency]]></ATT>
-            <ATT name="status">1970354901745664</ATT>
-          </ATTRIBUTES>
-          <DEPENDENCIES>
-            <LINK relation="Target">
-              <ID name="Cadastrar Modelo" mc="Standard.UseCase" uid="230d0694-c03b-4f9a-8ced-d4f26ae95320"/>
-            </LINK>
-            <LINK relation="Extension">
-              <FOREIGNID name="extend" mc="Infrastructure.Stereotype" uid="00000000-0000-9c48-0000-000000000000"/>
-            </LINK>
-          </DEPENDENCIES>
-        </OBJECT>
-      </COMP>
       <COMP relation="Descriptor">
         <OBJECT>
           <ID name="" mc="Infrastructure.Note" uid="7772ab56-de42-4f2d-b5ff-27d6b990eead"/>
@@ -79,13 +62,13 @@
             <ATT name="Content"><![CDATA[Cenarios de Excessão:
 
 1 - O analista verifica que o modelo do computador não está cadastrado.
-2 - O analista Aciona um botão que executa o caso de uso "Cadastrar Modelo"
+2 - O analista Aciona um botão que executa o caso de uso "Cadastrar Modelo".
 
 2 - O sistema verifica que o "numero de série" informado já está cadastrado em outro computador.
-3 - O sistema retorna uma menságem tratada informando ao analista que "o numero de serie informado já está cadastrado em outro computador".
+3 - O sistema retorna uma menságem tratada informando ao analista que "o numero de serie informado já está cadastrado em outro computador" e finaliza a execução.
 
 2 - O sistema verifica que o "hostname" informado já está cadastrado em outro computador.
-3 - O sistema retorna uma menságem tratada informando ao analista que "o hostname informado já está cadastrado em outro equipamento".]]></ATT>
+3 - O sistema retorna uma menságem tratada informando ao analista que "o hostname informado já está cadastrado em outro equipamento" e finaliza a execução.]]></ATT>
             <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
             <ATT name="Name"><![CDATA[Excessões]]></ATT>
             <ATT name="status">1970354901745664</ATT>
@@ -132,7 +115,7 @@
 1 - O usuário informa os dados do computador a ser cadastrado.
 2 - O sistema valida os dados informados.
 3 - O sistema adiciona o computador ao sistema com o status de estoque.
-4 - O sistema retorna uma menságem informando que o computador foi cadastrado ao sistema.
+4 - O sistema retorna uma menságem informando que "o computador foi cadastrado ao sistema" e finaliza a execução.
 ]]></ATT>
             <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
             <ATT name="Name"><![CDATA[Cenario de Sucesso]]></ATT>

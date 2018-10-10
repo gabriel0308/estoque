@@ -20,9 +20,9 @@ class ModeloController extends Controller
     {
         $tipos = Tipo::orderBy('NomeTipo','asc')
                     ->get();
-        $fabricantes = Fabricante::orderBy('NomeFabricante', 'asc')
+        $fabricantes2 = Fabricante::orderBy('NomeFabricante', 'asc')
                         ->get();
-        return view('forms\cadastroModelo', compact('tipos'), compact('fabricantes'));
+        return view('forms\cadastroModelo', compact('tipos'), compact('fabricantes2'));
     }
 
      public function index()
@@ -54,7 +54,7 @@ class ModeloController extends Controller
         $modelo = new Modelo;
         $modelo->NomeModelo = $request->NomeModelo;
         $tipo = Tipo::find($request->IdTipo);
-        $fabricante = Fabricante::find($request->IdFabricante);
+        $fabricante = Fabricante::find($request->IdFabricante2);
         $modelo->tipo()->associate($tipo);
         $modelo->fabricante()->associate($fabricante);
         $modelo->save();

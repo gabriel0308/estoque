@@ -15,29 +15,14 @@
     <DEPENDENCIES>
       <COMP relation="Used">
         <OBJECT>
-          <ID name="UseCaseDependency" mc="Standard.UseCaseDependency" uid="a3b3bb1e-9019-4a6a-98eb-eaabb1c30db4"/>
+          <ID name="UseCaseDependency" mc="Standard.UseCaseDependency" uid="e26009de-4eda-41c8-9271-3ab1094de0cf"/>
           <ATTRIBUTES>
             <ATT name="Name"><![CDATA[UseCaseDependency]]></ATT>
             <ATT name="status">1970354901745664</ATT>
           </ATTRIBUTES>
           <DEPENDENCIES>
             <LINK relation="Target">
-              <ID name="Cadastrar Marca" mc="Standard.UseCase" uid="8562301c-2ff8-43a3-9439-da376d5af4f9"/>
-            </LINK>
-            <LINK relation="Extension">
-              <FOREIGNID name="extend" mc="Infrastructure.Stereotype" uid="00000000-0000-9c48-0000-000000000000"/>
-            </LINK>
-          </DEPENDENCIES>
-        </OBJECT>
-        <OBJECT>
-          <ID name="UseCaseDependency" mc="Standard.UseCaseDependency" uid="f2de9275-42f9-4947-b26b-91898bb7b08c"/>
-          <ATTRIBUTES>
-            <ATT name="Name"><![CDATA[UseCaseDependency]]></ATT>
-            <ATT name="status">1970354901745664</ATT>
-          </ATTRIBUTES>
-          <DEPENDENCIES>
-            <LINK relation="Target">
-              <ID name="Cadastrar Tipo" mc="Standard.UseCase" uid="386cc87f-ff57-4b27-9e03-ff1cdbef2e83"/>
+              <ID name="Cadastrar Computadores" mc="Standard.UseCase" uid="4123cb0d-b39a-4a60-88b7-0396bb16c282"/>
             </LINK>
             <LINK relation="Extension">
               <FOREIGNID name="extend" mc="Infrastructure.Stereotype" uid="00000000-0000-9c48-0000-000000000000"/>
@@ -49,7 +34,7 @@
         <OBJECT>
           <ID name="" mc="Infrastructure.Note" uid="a5323f62-cb63-4b24-b970-3af10f7a0e06"/>
           <ATTRIBUTES>
-            <ATT name="Content"><![CDATA[...]]></ATT>
+            <ATT name="Content"><![CDATA[Cadastra modelo de coputador no sistema.]]></ATT>
             <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
             <ATT name="Name"></ATT>
             <ATT name="status">1970354901745664</ATT>
@@ -89,11 +74,20 @@
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="" mc="Infrastructure.Note" uid="68e84c4e-7745-4a28-8551-816d1620a30d"/>
+          <ID name="Excessões" mc="Infrastructure.Note" uid="68e84c4e-7745-4a28-8551-816d1620a30d"/>
           <ATTRIBUTES>
-            <ATT name="Content"><![CDATA[...]]></ATT>
+            <ATT name="Content"><![CDATA[Cenarios de excessão:
+
+1 - O analista verifica que o fabricante do equipamento não está cadastrado.
+2 - O analista aciona um botão que executa o caso de uso "Cadastrar fabricante".
+
+1 - O analista verifica que o tipo do equipamento não está cadastrado.
+2 - O analista aciona um botão que executa o caso de uso "Cadastrar tipo".
+
+2 - O modelo informado ja está cadastrado no sistema.
+3 - O sistema retorna uma mensagem informando que "o modelo informado já está cadastrado no sistema" e finaliza a execução.]]></ATT>
             <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
-            <ATT name="Name"></ATT>
+            <ATT name="Name"><![CDATA[Excessões]]></ATT>
             <ATT name="status">1970354901745664</ATT>
           </ATTRIBUTES>
           <DEPENDENCIES>
@@ -127,6 +121,23 @@
           <DEPENDENCIES>
             <LINK relation="Model">
               <FOREIGNID name="postcondition" mc="Infrastructure.NoteType" uid="00bc0b8c-0000-2517-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Cenario de Sucesso" mc="Infrastructure.Note" uid="46a7468e-c36c-451b-a40e-902be0dd23aa"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[1 - O analista informa os dados referentes ao modelo.
+2 - O sistema trata os dados informados.
+3 - O sistema armazena o modelo informado.
+4 - O sistema retorna uma mensagem tratada informando que "O modelo foi cadastrado" e finaliza a execução.]]></ATT>
+            <ATT name="MimeType"></ATT>
+            <ATT name="Name"><![CDATA[Cenario de Sucesso]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="undefined" mc="Infrastructure.NoteType" uid="00000000-0000-3e83-0000-000000000000"/>
             </LINK>
           </DEPENDENCIES>
         </OBJECT>

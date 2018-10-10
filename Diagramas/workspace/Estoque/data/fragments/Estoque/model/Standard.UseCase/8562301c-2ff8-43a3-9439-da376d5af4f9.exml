@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
-<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Cadastrar Marca" version="4">
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Cadastrar Fabricante" version="4">
   <OBJECT>
-    <ID name="Cadastrar Marca" mc="Standard.UseCase" uid="8562301c-2ff8-43a3-9439-da376d5af4f9"/>
+    <ID name="Cadastrar Fabricante" mc="Standard.UseCase" uid="8562301c-2ff8-43a3-9439-da376d5af4f9"/>
     <PID name="estoque" mc="Standard.Package" uid="9443703a-6c2d-436c-a41b-fae937951bc8"/>
     <ATTRIBUTES>
       <ATT name="IsElementary">false</ATT>
@@ -9,15 +9,32 @@
       <ATT name="IsLeaf">false</ATT>
       <ATT name="IsRoot">false</ATT>
       <ATT name="Visibility">Public</ATT>
-      <ATT name="Name"><![CDATA[Cadastrar Marca]]></ATT>
+      <ATT name="Name"><![CDATA[Cadastrar Fabricante]]></ATT>
       <ATT name="status">1970354901745664</ATT>
     </ATTRIBUTES>
     <DEPENDENCIES>
+      <COMP relation="Used">
+        <OBJECT>
+          <ID name="UseCaseDependency" mc="Standard.UseCaseDependency" uid="cce1a7ba-ff4e-4d98-b2ae-c558e64d934b"/>
+          <ATTRIBUTES>
+            <ATT name="Name"><![CDATA[UseCaseDependency]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Target">
+              <ID name="Cadastrar Modelo" mc="Standard.UseCase" uid="230d0694-c03b-4f9a-8ced-d4f26ae95320"/>
+            </LINK>
+            <LINK relation="Extension">
+              <FOREIGNID name="extend" mc="Infrastructure.Stereotype" uid="00000000-0000-9c48-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
       <COMP relation="Descriptor">
         <OBJECT>
           <ID name="" mc="Infrastructure.Note" uid="0cf303c3-2c78-4dfd-9c2f-cc19e2f1e14b"/>
           <ATTRIBUTES>
-            <ATT name="Content"><![CDATA[...]]></ATT>
+            <ATT name="Content"><![CDATA[Cadastrar Fabricante no sistema.]]></ATT>
             <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
             <ATT name="Name"></ATT>
             <ATT name="status">1970354901745664</ATT>
@@ -57,11 +74,14 @@
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="" mc="Infrastructure.Note" uid="bb4f6292-6869-41cb-96f2-09667abc0aaf"/>
+          <ID name="Excessões" mc="Infrastructure.Note" uid="bb4f6292-6869-41cb-96f2-09667abc0aaf"/>
           <ATTRIBUTES>
-            <ATT name="Content"><![CDATA[...]]></ATT>
+            <ATT name="Content"><![CDATA[Cenarios de Excessão:
+
+2 - O sistema verifica que o fabricante informado já esta cadastrado.
+3 - O sistema retorna uma menságem informando que "o fabricante informado já está cadastrado" e finaliza a execução.]]></ATT>
             <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
-            <ATT name="Name"></ATT>
+            <ATT name="Name"><![CDATA[Excessões]]></ATT>
             <ATT name="status">1970354901745664</ATT>
           </ATTRIBUTES>
           <DEPENDENCIES>
@@ -95,6 +115,23 @@
           <DEPENDENCIES>
             <LINK relation="Model">
               <FOREIGNID name="postcondition" mc="Infrastructure.NoteType" uid="00bc0b8c-0000-2517-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Cenario de sucesso" mc="Infrastructure.Note" uid="260a1d79-2ba6-4ed1-9dec-f0805876106a"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[1 - O analista informa os dados do fabricante do computador.
+2 - O sistema trata os dados do fabricante.
+3 - O fabricante é armazenado no sistema.
+4 - O sistema retorna uma mensagem tratada informando que "O fabricante foi adicionado" e termina a execução.]]></ATT>
+            <ATT name="MimeType"></ATT>
+            <ATT name="Name"><![CDATA[Cenario de sucesso]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="undefined" mc="Infrastructure.NoteType" uid="00000000-0000-3e83-0000-000000000000"/>
             </LINK>
           </DEPENDENCIES>
         </OBJECT>
