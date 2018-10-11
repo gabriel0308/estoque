@@ -17,6 +17,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property string $RamalUsuario
  * @property string $DepartamentoUsuario
  * @property string $UnidadeUsuario
+ * @property float $NumeroTicket
  * 
  * @property \Illuminate\Database\Eloquent\Collection $movimentacaos
  * @property \Illuminate\Database\Eloquent\Collection $movperifericos
@@ -33,7 +34,8 @@ class Ticket extends Eloquent
 		'MatriculaUsuario',
 		'RamalUsuario',
 		'DepartamentoUsuario',
-		'UnidadeUsuario'
+		'UnidadeUsuario',
+		'NumeroTicket'
 	];
 
 	public function movimentacaos()

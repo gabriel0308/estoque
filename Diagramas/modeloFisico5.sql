@@ -40,7 +40,8 @@ IdTicket double PRIMARY KEY AUTO_INCREMENT,
 MatriculaUsuario varchar(8),
 RamalUsuario varchar(15),
 DepartamentoUsuario Varchar(30),
-UnidadeUsuario varchar(30)
+UnidadeUsuario varchar(30),
+NumeroTicket double
 );
 
 CREATE TABLE MovPeriferico (
