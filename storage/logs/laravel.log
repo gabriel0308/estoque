@@ -14477,3 +14477,7 @@ Did you mean one of these?
 #58 C:\\xampp\\htdocs\\estoque\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #59 {main}
 "} 
+[2018-10-18 17:43:42] local.ERROR: SQLSTATE[HY000] [2002] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente.
+  
+[2018-10-18 17:43:42] local.ERROR: SQLSTATE[HY000] [2002] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente.
+ (SQL: select * from `analista` where `MatriculaAnalista` like cs261967 and `SenhaAnalista` like 73e7aad2d7e4d6165df0084daa69bcc983decba8 limit 1)  

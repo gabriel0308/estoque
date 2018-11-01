@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
-<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Cadastrar Modelo" version="4">
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Vincular Ticket a equipamento" version="4">
   <OBJECT>
-    <ID name="Cadastrar Modelo" mc="Standard.UseCase" uid="230d0694-c03b-4f9a-8ced-d4f26ae95320"/>
+    <ID name="Vincular Ticket a equipamento" mc="Standard.UseCase" uid="adb418e2-40c8-4688-88de-2b5c26dcc083"/>
     <PID name="estoque" mc="Standard.Package" uid="9443703a-6c2d-436c-a41b-fae937951bc8"/>
     <ATTRIBUTES>
       <ATT name="IsElementary">false</ATT>
@@ -9,26 +9,47 @@
       <ATT name="IsLeaf">false</ATT>
       <ATT name="IsRoot">false</ATT>
       <ATT name="Visibility">Public</ATT>
-      <ATT name="Name"><![CDATA[Cadastrar Modelo]]></ATT>
+      <ATT name="Name"><![CDATA[Vincular Ticket a equipamento]]></ATT>
       <ATT name="status">1970354901745664</ATT>
     </ATTRIBUTES>
     <DEPENDENCIES>
-      <COMP relation="OwnedExtension">
+      <COMP relation="Used">
         <OBJECT>
-          <ID name="Extension Point" mc="Standard.ExtensionPoint" uid="39363113-d185-4d58-b303-c6b97ee65753"/>
+          <ID name="UseCaseDependency" mc="Standard.UseCaseDependency" uid="2a65467a-164a-4dd7-8a86-284a56ac5f1f"/>
           <ATTRIBUTES>
-            <ATT name="Visibility">Public</ATT>
-            <ATT name="Name"><![CDATA[Extension Point]]></ATT>
+            <ATT name="Name"><![CDATA[UseCaseDependency]]></ATT>
             <ATT name="status">1970354901745664</ATT>
           </ATTRIBUTES>
-          <DEPENDENCIES></DEPENDENCIES>
+          <DEPENDENCIES>
+            <LINK relation="Target">
+              <ID name="Listar Ticket de Solicitação" mc="Standard.UseCase" uid="3a7edb10-b8e1-4b1b-9456-68605e31b512"/>
+            </LINK>
+            <LINK relation="Extension">
+              <FOREIGNID name="extend" mc="Infrastructure.Stereotype" uid="00000000-0000-9c48-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="UseCaseDependency" mc="Standard.UseCaseDependency" uid="dd38889f-e2f2-424c-ab15-7208ef3421a5"/>
+          <ATTRIBUTES>
+            <ATT name="Name"><![CDATA[UseCaseDependency]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Target">
+              <ID name="Listar Computador" mc="Standard.UseCase" uid="c089a28e-a2cc-4ee2-87ef-2472d34197f6"/>
+            </LINK>
+            <LINK relation="Extension">
+              <FOREIGNID name="include" mc="Infrastructure.Stereotype" uid="00000000-0000-9c49-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
         </OBJECT>
       </COMP>
       <COMP relation="Descriptor">
         <OBJECT>
-          <ID name="" mc="Infrastructure.Note" uid="a5323f62-cb63-4b24-b970-3af10f7a0e06"/>
+          <ID name="" mc="Infrastructure.Note" uid="5eef8896-82cd-4f7a-a5ff-9d1eb4cddd8a"/>
           <ATTRIBUTES>
-            <ATT name="Content"><![CDATA[Cadastra modelo de coputador no sistema.]]></ATT>
+            <ATT name="Content"><![CDATA[Vincular Ticket a equipamento.]]></ATT>
             <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
             <ATT name="Name"></ATT>
             <ATT name="status">1970354901745664</ATT>
@@ -40,7 +61,7 @@
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="" mc="Infrastructure.Note" uid="5f47dba5-3fd6-452e-920b-9e53df638066"/>
+          <ID name="" mc="Infrastructure.Note" uid="fabf6bc8-579e-43ab-84af-d0edf13f6080"/>
           <ATTRIBUTES>
             <ATT name="Content"><![CDATA[...]]></ATT>
             <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -54,7 +75,7 @@
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="" mc="Infrastructure.Note" uid="8b0de726-1f2e-4e6c-8c55-0ff184338856"/>
+          <ID name="" mc="Infrastructure.Note" uid="d5d4c86c-3706-4655-b1ff-ff3c33ed42e1"/>
           <ATTRIBUTES>
             <ATT name="Content"><![CDATA[...]]></ATT>
             <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -68,20 +89,11 @@
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="Excessões" mc="Infrastructure.Note" uid="68e84c4e-7745-4a28-8551-816d1620a30d"/>
+          <ID name="" mc="Infrastructure.Note" uid="ac09639e-9dfc-42d8-b91d-cdd6ff22b57b"/>
           <ATTRIBUTES>
-            <ATT name="Content"><![CDATA[Cenarios de excessão:
-
-1 - O analista verifica que o fabricante do equipamento não está cadastrado.
-2 - O analista aciona um botão que executa o caso de uso "Cadastrar fabricante".
-
-1 - O analista verifica que o tipo do equipamento não está cadastrado.
-2 - O analista aciona um botão que executa o caso de uso "Cadastrar tipo".
-
-2 - O modelo informado ja está cadastrado no sistema.
-3 - O sistema retorna uma mensagem informando que "o modelo informado já está cadastrado no sistema" e finaliza a execução.]]></ATT>
+            <ATT name="Content"><![CDATA[...]]></ATT>
             <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
-            <ATT name="Name"><![CDATA[Excessões]]></ATT>
+            <ATT name="Name"></ATT>
             <ATT name="status">1970354901745664</ATT>
           </ATTRIBUTES>
           <DEPENDENCIES>
@@ -91,7 +103,7 @@
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="" mc="Infrastructure.Note" uid="a3e0a268-5fd7-4677-bddf-e7af65f806bd"/>
+          <ID name="" mc="Infrastructure.Note" uid="12c894d6-5d37-4c8b-a572-f4dd477cd48b"/>
           <ATTRIBUTES>
             <ATT name="Content"><![CDATA[...]]></ATT>
             <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -105,7 +117,7 @@
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="" mc="Infrastructure.Note" uid="c4223307-3d25-4bd4-b117-ba2c61f9c306"/>
+          <ID name="" mc="Infrastructure.Note" uid="f18d625f-3a27-4cb2-a36b-60853018d2de"/>
           <ATTRIBUTES>
             <ATT name="Content"><![CDATA[...]]></ATT>
             <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -119,14 +131,14 @@
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="Cenario de Sucesso" mc="Infrastructure.Note" uid="46a7468e-c36c-451b-a40e-902be0dd23aa"/>
+          <ID name="Caso de Sucesso" mc="Infrastructure.Note" uid="11c033b3-5d4c-48ed-bc59-6a25779c05c4"/>
           <ATTRIBUTES>
-            <ATT name="Content"><![CDATA[1 - O analista informa os dados referentes ao modelo.
-2 - O sistema trata os dados informados.
-3 - O sistema armazena o modelo informado.
-4 - O sistema retorna uma mensagem tratada informando que "O modelo foi cadastrado" e finaliza a execução.]]></ATT>
+            <ATT name="Content"><![CDATA[1 - Executa o caso de uso Listar computador.
+2 - O sistema exibe os computadores com status "em estoque".
+3 - O Analista informa o equipamento desejado.
+4 - O sistema armazena a movimentação com os dados IdComp, IdAnalista, IdTicket, TipoMovimentacao, DataMovimentacao.]]></ATT>
             <ATT name="MimeType"></ATT>
-            <ATT name="Name"><![CDATA[Cenario de Sucesso]]></ATT>
+            <ATT name="Name"><![CDATA[Caso de Sucesso]]></ATT>
             <ATT name="status">1970354901745664</ATT>
           </ATTRIBUTES>
           <DEPENDENCIES>

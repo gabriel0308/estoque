@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
-<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Cadastrar Computadores" version="4">
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Cadastrar Computador" version="4">
   <OBJECT>
-    <ID name="Cadastrar Computadores" mc="Standard.UseCase" uid="4123cb0d-b39a-4a60-88b7-0396bb16c282"/>
+    <ID name="Cadastrar Computador" mc="Standard.UseCase" uid="4123cb0d-b39a-4a60-88b7-0396bb16c282"/>
     <PID name="estoque" mc="Standard.Package" uid="9443703a-6c2d-436c-a41b-fae937951bc8"/>
     <ATTRIBUTES>
       <ATT name="IsElementary">false</ATT>
@@ -9,10 +9,21 @@
       <ATT name="IsLeaf">false</ATT>
       <ATT name="IsRoot">false</ATT>
       <ATT name="Visibility">Public</ATT>
-      <ATT name="Name"><![CDATA[Cadastrar Computadores]]></ATT>
+      <ATT name="Name"><![CDATA[Cadastrar Computador]]></ATT>
       <ATT name="status">1970354901745664</ATT>
     </ATTRIBUTES>
     <DEPENDENCIES>
+      <COMP relation="OwnedExtension">
+        <OBJECT>
+          <ID name="Extension Point" mc="Standard.ExtensionPoint" uid="66704fd4-0482-4ad7-9838-e7ffab3b1d49"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="Name"><![CDATA[Extension Point]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+      </COMP>
       <COMP relation="Descriptor">
         <OBJECT>
           <ID name="" mc="Infrastructure.Note" uid="7772ab56-de42-4f2d-b5ff-27d6b990eead"/>
@@ -112,7 +123,7 @@
           <ATTRIBUTES>
             <ATT name="Content"><![CDATA[Cenario de Sucesso:
 
-1 - O usuário informa os dados do computador a ser cadastrado.
+1 - O Analista informa os dados do computador a ser cadastrado.
 2 - O sistema valida os dados informados.
 3 - O sistema adiciona o computador ao sistema com o status de estoque.
 4 - O sistema retorna uma menságem informando que "o computador foi cadastrado ao sistema" e finaliza a execução.

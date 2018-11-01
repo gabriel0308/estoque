@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
-<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Editar Computadores" version="4">
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Editar Computador" version="4">
   <OBJECT>
-    <ID name="Editar Computadores" mc="Standard.UseCase" uid="01cfc054-8223-4449-8d83-ab6500ef3701"/>
+    <ID name="Editar Computador" mc="Standard.UseCase" uid="01cfc054-8223-4449-8d83-ab6500ef3701"/>
     <PID name="estoque" mc="Standard.Package" uid="9443703a-6c2d-436c-a41b-fae937951bc8"/>
     <ATTRIBUTES>
       <ATT name="IsElementary">false</ATT>
@@ -9,27 +9,10 @@
       <ATT name="IsLeaf">false</ATT>
       <ATT name="IsRoot">false</ATT>
       <ATT name="Visibility">Public</ATT>
-      <ATT name="Name"><![CDATA[Editar Computadores]]></ATT>
+      <ATT name="Name"><![CDATA[Editar Computador]]></ATT>
       <ATT name="status">1970354901745664</ATT>
     </ATTRIBUTES>
     <DEPENDENCIES>
-      <COMP relation="Used">
-        <OBJECT>
-          <ID name="UseCaseDependency" mc="Standard.UseCaseDependency" uid="ed871ddb-0d3d-4829-85f0-8cb3ec6a61f4"/>
-          <ATTRIBUTES>
-            <ATT name="Name"><![CDATA[UseCaseDependency]]></ATT>
-            <ATT name="status">1970354901745664</ATT>
-          </ATTRIBUTES>
-          <DEPENDENCIES>
-            <LINK relation="Target">
-              <ID name="Listar Computadores" mc="Standard.UseCase" uid="c089a28e-a2cc-4ee2-87ef-2472d34197f6"/>
-            </LINK>
-            <LINK relation="Extension">
-              <FOREIGNID name="include" mc="Infrastructure.Stereotype" uid="00000000-0000-9c49-0000-000000000000"/>
-            </LINK>
-          </DEPENDENCIES>
-        </OBJECT>
-      </COMP>
       <COMP relation="Descriptor">
         <OBJECT>
           <ID name="" mc="Infrastructure.Note" uid="b3a08de9-8daf-4c3c-9c0f-07ce45fe67fb"/>
@@ -90,7 +73,7 @@
         <OBJECT>
           <ID name="" mc="Infrastructure.Note" uid="0e2d15f2-9b9f-4e5c-ab7e-92c9b5b70c1c"/>
           <ATTRIBUTES>
-            <ATT name="Content"><![CDATA[...]]></ATT>
+            <ATT name="Content"><![CDATA[O sistema já deve ter carregado os dados do computador informado previamente pelo usuário no caso de uso Listar Computador.]]></ATT>
             <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
             <ATT name="Name"></ATT>
             <ATT name="status">1970354901745664</ATT>
@@ -112,6 +95,20 @@
           <DEPENDENCIES>
             <LINK relation="Model">
               <FOREIGNID name="postcondition" mc="Infrastructure.NoteType" uid="00bc0b8c-0000-2517-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Cenario de Sucesso" mc="Infrastructure.Note" uid="78dd8517-f82c-4fa2-8d8b-5d807e74d832"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[1 - ]]></ATT>
+            <ATT name="MimeType"></ATT>
+            <ATT name="Name"><![CDATA[Cenario de Sucesso]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="undefined" mc="Infrastructure.NoteType" uid="00000000-0000-3e83-0000-000000000000"/>
             </LINK>
           </DEPENDENCIES>
         </OBJECT>

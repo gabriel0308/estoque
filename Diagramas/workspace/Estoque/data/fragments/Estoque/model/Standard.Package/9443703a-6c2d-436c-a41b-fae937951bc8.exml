@@ -33,8 +33,12 @@
         <COMPID name="Gerenciar Modelos de Periféricos" mc="Standard.UseCase" uid="69080640-106f-4068-bb4d-abca982d7fd5"/>
         <COMPID name="Movimentar Perifericos" mc="Standard.UseCase" uid="ef236214-61fa-420b-9c3b-ec563a522f77"/>
         <COMPID name="Cadastrar Modelo" mc="Standard.UseCase" uid="230d0694-c03b-4f9a-8ced-d4f26ae95320"/>
-        <COMPID name="Cadastrar Marca" mc="Standard.UseCase" uid="8562301c-2ff8-43a3-9439-da376d5af4f9"/>
+        <COMPID name="Cadastrar Fabricante" mc="Standard.UseCase" uid="8562301c-2ff8-43a3-9439-da376d5af4f9"/>
         <COMPID name="Cadastrar Tipo" mc="Standard.UseCase" uid="386cc87f-ff57-4b27-9e03-ff1cdbef2e83"/>
+        <COMPID name="Gerenciar Tickets de Solicitação" mc="Standard.UseCase" uid="418bc1b4-f8a1-4b54-81b5-5985b1cb1841"/>
+        <COMPID name="Cadastrar ticket de solicitação" mc="Standard.UseCase" uid="8dc33ea4-e548-4d42-be94-726dc37946cb"/>
+        <COMPID name="Listar Ticket de Solicitação" mc="Standard.UseCase" uid="3a7edb10-b8e1-4b1b-9456-68605e31b512"/>
+        <COMPID name="Vincular Ticket a equipamento" mc="Standard.UseCase" uid="adb418e2-40c8-4688-88de-2b5c26dcc083"/>
       </COMP>
       <COMP relation="Product">
         <COMPID name="nivel 1" mc="Standard.UseCaseDiagram" uid="a49a0c4d-70e3-4a28-aa5c-e1a789f7b083"/>
@@ -42,6 +46,7 @@
         <COMPID name="Gerenciar Maquinas" mc="Standard.UseCaseDiagram" uid="956eacf8-edbf-4cca-a473-ced5b1507482"/>
         <COMPID name="Gerenciar Computadores" mc="Standard.UseCaseDiagram" uid="8dadcfaa-10eb-4e89-a05a-2313e4b974af"/>
         <COMPID name="Gerenciar Periféricos" mc="Standard.UseCaseDiagram" uid="ddf03023-b02c-4cc5-b046-e3124218aff4"/>
+        <COMPID name="Gerenciar Tickets de Solicitação" mc="Standard.UseCaseDiagram" uid="131c3ded-6cc9-4966-8750-9b6b6ad8df6a"/>
       </COMP>
     </DEPENDENCIES>
   </OBJECT>

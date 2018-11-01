@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
-<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Cadastrar Modelo" version="4">
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Gerenciar Tickets de Solicitação" version="4">
   <OBJECT>
-    <ID name="Cadastrar Modelo" mc="Standard.UseCase" uid="230d0694-c03b-4f9a-8ced-d4f26ae95320"/>
+    <ID name="Gerenciar Tickets de Solicitação" mc="Standard.UseCase" uid="418bc1b4-f8a1-4b54-81b5-5985b1cb1841"/>
     <PID name="estoque" mc="Standard.Package" uid="9443703a-6c2d-436c-a41b-fae937951bc8"/>
     <ATTRIBUTES>
       <ATT name="IsElementary">false</ATT>
@@ -9,26 +9,15 @@
       <ATT name="IsLeaf">false</ATT>
       <ATT name="IsRoot">false</ATT>
       <ATT name="Visibility">Public</ATT>
-      <ATT name="Name"><![CDATA[Cadastrar Modelo]]></ATT>
+      <ATT name="Name"><![CDATA[Gerenciar Tickets de Solicitação]]></ATT>
       <ATT name="status">1970354901745664</ATT>
     </ATTRIBUTES>
     <DEPENDENCIES>
-      <COMP relation="OwnedExtension">
-        <OBJECT>
-          <ID name="Extension Point" mc="Standard.ExtensionPoint" uid="39363113-d185-4d58-b303-c6b97ee65753"/>
-          <ATTRIBUTES>
-            <ATT name="Visibility">Public</ATT>
-            <ATT name="Name"><![CDATA[Extension Point]]></ATT>
-            <ATT name="status">1970354901745664</ATT>
-          </ATTRIBUTES>
-          <DEPENDENCIES></DEPENDENCIES>
-        </OBJECT>
-      </COMP>
       <COMP relation="Descriptor">
         <OBJECT>
-          <ID name="" mc="Infrastructure.Note" uid="a5323f62-cb63-4b24-b970-3af10f7a0e06"/>
+          <ID name="" mc="Infrastructure.Note" uid="71c67fab-766a-4a32-9189-28a478c451de"/>
           <ATTRIBUTES>
-            <ATT name="Content"><![CDATA[Cadastra modelo de coputador no sistema.]]></ATT>
+            <ATT name="Content"><![CDATA[...]]></ATT>
             <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
             <ATT name="Name"></ATT>
             <ATT name="status">1970354901745664</ATT>
@@ -40,7 +29,7 @@
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="" mc="Infrastructure.Note" uid="5f47dba5-3fd6-452e-920b-9e53df638066"/>
+          <ID name="" mc="Infrastructure.Note" uid="8915b32e-ad4e-45a2-bb6c-3e1f4d6321e1"/>
           <ATTRIBUTES>
             <ATT name="Content"><![CDATA[...]]></ATT>
             <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -54,7 +43,7 @@
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="" mc="Infrastructure.Note" uid="8b0de726-1f2e-4e6c-8c55-0ff184338856"/>
+          <ID name="" mc="Infrastructure.Note" uid="34a13cb3-d8c3-4fa1-8eda-0625b350a610"/>
           <ATTRIBUTES>
             <ATT name="Content"><![CDATA[...]]></ATT>
             <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -68,20 +57,11 @@
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="Excessões" mc="Infrastructure.Note" uid="68e84c4e-7745-4a28-8551-816d1620a30d"/>
+          <ID name="" mc="Infrastructure.Note" uid="78890002-6e55-4f1f-96d2-38fe24987c21"/>
           <ATTRIBUTES>
-            <ATT name="Content"><![CDATA[Cenarios de excessão:
-
-1 - O analista verifica que o fabricante do equipamento não está cadastrado.
-2 - O analista aciona um botão que executa o caso de uso "Cadastrar fabricante".
-
-1 - O analista verifica que o tipo do equipamento não está cadastrado.
-2 - O analista aciona um botão que executa o caso de uso "Cadastrar tipo".
-
-2 - O modelo informado ja está cadastrado no sistema.
-3 - O sistema retorna uma mensagem informando que "o modelo informado já está cadastrado no sistema" e finaliza a execução.]]></ATT>
+            <ATT name="Content"><![CDATA[...]]></ATT>
             <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
-            <ATT name="Name"><![CDATA[Excessões]]></ATT>
+            <ATT name="Name"></ATT>
             <ATT name="status">1970354901745664</ATT>
           </ATTRIBUTES>
           <DEPENDENCIES>
@@ -91,7 +71,7 @@
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="" mc="Infrastructure.Note" uid="a3e0a268-5fd7-4677-bddf-e7af65f806bd"/>
+          <ID name="" mc="Infrastructure.Note" uid="d1b038c1-f7ef-43d9-b996-72c69607e535"/>
           <ATTRIBUTES>
             <ATT name="Content"><![CDATA[...]]></ATT>
             <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -105,7 +85,7 @@
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="" mc="Infrastructure.Note" uid="c4223307-3d25-4bd4-b117-ba2c61f9c306"/>
+          <ID name="" mc="Infrastructure.Note" uid="3650056a-2797-456e-8f40-37c1a0eb0e11"/>
           <ATTRIBUTES>
             <ATT name="Content"><![CDATA[...]]></ATT>
             <ATT name="MimeType"><![CDATA[text/plain]]></ATT>
@@ -115,23 +95,6 @@
           <DEPENDENCIES>
             <LINK relation="Model">
               <FOREIGNID name="postcondition" mc="Infrastructure.NoteType" uid="00bc0b8c-0000-2517-0000-000000000000"/>
-            </LINK>
-          </DEPENDENCIES>
-        </OBJECT>
-        <OBJECT>
-          <ID name="Cenario de Sucesso" mc="Infrastructure.Note" uid="46a7468e-c36c-451b-a40e-902be0dd23aa"/>
-          <ATTRIBUTES>
-            <ATT name="Content"><![CDATA[1 - O analista informa os dados referentes ao modelo.
-2 - O sistema trata os dados informados.
-3 - O sistema armazena o modelo informado.
-4 - O sistema retorna uma mensagem tratada informando que "O modelo foi cadastrado" e finaliza a execução.]]></ATT>
-            <ATT name="MimeType"></ATT>
-            <ATT name="Name"><![CDATA[Cenario de Sucesso]]></ATT>
-            <ATT name="status">1970354901745664</ATT>
-          </ATTRIBUTES>
-          <DEPENDENCIES>
-            <LINK relation="Model">
-              <FOREIGNID name="undefined" mc="Infrastructure.NoteType" uid="00000000-0000-3e83-0000-000000000000"/>
             </LINK>
           </DEPENDENCIES>
         </OBJECT>

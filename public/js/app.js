@@ -5,7 +5,6 @@ $( document ).ready(function()
         $(".dropdown-trigger").dropdown();
         $('select').formSelect();
         $('.sidenav').sidenav();
-        $('.modal').modal();
 
         //textArea Cadastro Computador
 
@@ -13,7 +12,7 @@ $( document ).ready(function()
         M.textareaAutoResize($('#ObservacaoComp'));
 
         //inicializa Modal Computador
-        
+        $('.modal').modal();
 
     }   
 );
