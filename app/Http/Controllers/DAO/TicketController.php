@@ -36,7 +36,14 @@ class TicketController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $ticket = new Ticket;
+        $ticket->NumeroTicket = strtoupper($request->NumeroTicket);
+        $ticket->MatriculaUsuario = strtoupper($request->MatriculaUsuario);
+        $ticket->RamalUsuario = strtoupper($request->RamalUsuario);
+        $ticket->DepartamentoUsuario = strtoupper($request->DepartamentoUsuario);
+        $ticket->UnidadeUsuario = strtoupper($request->UnidadeUsuario);
+        $ticket->save();
+        return redirect()->back();
     }
 
     /**

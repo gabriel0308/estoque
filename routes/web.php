@@ -57,3 +57,6 @@ Route::get('cadastrarComputador/ajax/tipo/{idTipo}/fabricante/{idFabricante}',ar
 Route::get('listagemComputadores', 'DAO\ComputadorController@listagemComputadores')->middleware('auth');
 Route::get('listagemComputadores/ajax/{search}', 'DAO\ComputadorController@searchAjax')->middleware('auth');
 
+#Ticket
+Route::view('/cadastroTicket', 'forms\cadastroTicket')->middleware('auth');
+Route::post('gravarTicket','DAO\TicketController@store')->middleware('auth');
