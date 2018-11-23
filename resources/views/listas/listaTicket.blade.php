@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="card-panel">
-                    <h4 class="header2">{{ __('Computadores') }}</h4>
+                    <h4 class="header2">{{ __('Tickets') }}</h4>
 
                     <div class="card-body ">
 
@@ -19,38 +19,36 @@
                             <table class="table highlight">
                                 <thead>
                                     <tr>
-                                        <th>Tipo</th>
-                                        <th>Hostname</th>
-                                        <th>Serial</th>
-                                        <th>Modelo</th>
-                                        <th>Status</th>
-                                        <th>Lacre</th>
-                                        <th>Data de cadastro</th>
-                                        <th>Analista que Cadastrou</th>
-                                        <th>Observação</th>                                   
+                                        <th class="center">Numero</th>
+                                        <th class="center">Matricula do Usuário</th>
+                                        <th class="center">Ramal do Usuário</th>
+                                        <th class="center">Departamento do Usuário</th>
+                                        <th class="center">Unidade do Usuário</th>
+                                        <th class="center"></th>                           
                                     </tr>
                                 </thead>
                                 <tbody >
-                                    @foreach ($computadores as $computador)
-                                    <tr>
-                                        <th>{{$computador->NomeTipo}}</th>
-                                        <th>{{$computador->HostnameComp}}</th>
-                                        <th>{{$computador->SerialComp}}</th>
-                                        <th>{{$computador->NomeModelo}}</th>
-                                        <th>{{$computador->StatusComp}}</th>
-                                        <th>{{$computador->LacreComp}}</th>
-                                        <th>{{$computador->DataCadastroComp}}</th>
-                                        <th>{{$computador->NomeAnalista}}</th>
-                                        <th>{{$computador->ObservacaoComp}}</th>
-                                    </tr>
+                                    @foreach ($tickets as $ticket)
+                                        <tr>
+                                            <th class="center">{{$ticket->NumeroTicket}}</th>
+                                            <th class="center">{{$ticket->MatriculaUsuario}}</th>
+                                            <th class="center">{{$ticket->RamalUsuario}}</th>
+                                            <th class="center">{{$ticket->DepartamentoUsuario}}</th>
+                                            <th class="center">{{$ticket->UnidadeUsuario}}</th>
+                                            <th class="center"><a class="btn-floating btn-small waves-effect waves-light pink darken-4"><i class="material-icons">desktop_windows</i></a>
+                                                <a class="btn-floating btn-small waves-effect waves-light pink darken-4" href="editarTicket/{{$ticket->IdTicket}}" id="edit"><i class="material-icons">create</i></a>
+                                                <a class="btn-floating btn-small waves-effect waves-light pink darken-4"><i class="material-icons">delete</i></a><th>
+                                        </tr>
                                     @endforeach
                                 </tbody>
                             </table>
-                            {{$computadores->links()}}
+                            {{$tickets->links()}}
                     </div>
                 </div>
             </div>
         </div>
     </div> 
 </div>
+
+@endsection
 

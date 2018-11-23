@@ -19,7 +19,7 @@
 Auth::routes();
 
 #Login
-Route::get('/', 'Logincontroller@showLogin');
+Route::get('/', 'LoginController@showLogin');
 Route::post('ValidaLogin', 'LoginController@validaLogin');
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -60,3 +60,5 @@ Route::get('listagemComputadores/ajax/{search}', 'DAO\ComputadorController@searc
 #Ticket
 Route::view('/cadastroTicket', 'forms\cadastroTicket')->middleware('auth');
 Route::post('gravarTicket','DAO\TicketController@store')->middleware('auth');
+Route::get('listagemTickets', 'DAO\TicketController@listagemTickets')->middleware('auth');
+Route::get('editarTicket/{idTicket}', 'DAO\TicketController@updateTicket');

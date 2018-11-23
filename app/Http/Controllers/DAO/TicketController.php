@@ -90,4 +90,17 @@ class TicketController extends Controller
     {
         //
     }
+
+    public function listagemTickets() 
+    {
+        $tickets = Ticket::orderBy('ticket.NumeroTicket', 'asc')
+                        ->paginate(15);
+        return view('listas\listaTicket', compact('tickets'));
+    }
+
+    public function updateTicket($idTicket)
+    {
+        $ticket = Ticket::find($idTicket);
+        return json_encode($ticket);
+    }
 }

@@ -43,6 +43,16 @@
                     <li><a href="/cadastrarComputador" class="dropdown-item white-text">Cadastrar Computador</a></li>   
                     <li><a href="/listagemComputadores" class="dropdown-item white-text">Listar Computadores</a></li>
             </ul>
+            
+            <ul id="tickets1" class="dropdown-content pink darken-4">
+                <li><a href="/cadastroTicket" class="dropdown-item white-text">Cadastrar Ticket</a></li>   
+                <li><a href="listagemTickets" class="dropdown-item white-text">Listar Tickets</a></li>
+            </ul>
+
+            <ul id="tickets2" class="dropdown-content pink darken-4">
+                <li><a href="/cadastroTicket" class="dropdown-item white-text">Cadastrar Ticket</a></li>   
+                <li><a href="listagemTickets" class="dropdown-item white-text">Listar Tickets</a></li>
+            </ul>
         
             <nav class="pink darken-4">
                 <div class="container">
@@ -56,10 +66,8 @@
                                 @auth('admin')
                                     <li><a class="dropdown-trigger white-text" href="#!" data-target="analistas1">Gerenciar Analistas<i class="material-icons right white-text">arrow_drop_down</i></a></li>
                                 @endauth
-                                <li><a href="/cadastroFabricante">Fabricante</a></li>
-                                <li><a href="/cadastroTipo">Tipo</a></li>
-                                <li><a href="/cadastrarModelo">Modelo</a></li>
                                 <li><a class="dropdown-trigger white-text" href="#!" data-target="computadores1">Gerenciar Computadores<i class="material-icons right white-text">arrow_drop_down</i></a></li>
+                                <li><a class="dropdown-trigger white-text" href="#!" data-target="tickets1">Gerenciar Tickets<i class="material-icons right white-text">arrow_drop_down</i></a></li>
                                 <li><a class="right" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a></li>
                             </ul>
                             
@@ -67,10 +75,8 @@
                                 @auth('admin')
                                     <li><a class="dropdown-trigger white-text" href="#!" data-target="analistas2">Gerenciar Analistas<i class="material-icons right white-text">arrow_drop_down</i></a></li>
                                 @endauth
-                                <li><a class="white-text" href="/cadastroFabricante">Fabricante</a></li>
-                                <li><a class="white-text" href="/cadastroTipo">Tipo</a></li>
-                                <li><a class="white-text" href="/cadastrarModelo">Modelo</a></li>
                                 <li><a class="dropdown-trigger white-text" href="#!" data-target="computadores2">Gerenciar Computadores<i class="material-icons right white-text">arrow_drop_down</i></a></li>
+                                <li><a class="dropdown-trigger white-text" href="#!" data-target="tickets2">Gerenciar Tickets<i class="material-icons right white-text">arrow_drop_down</i></a></li>
                                 <li><a class="white-text" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a></li>
                             </ul>       
 
