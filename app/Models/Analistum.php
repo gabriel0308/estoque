@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Wed, 19 Sep 2018 21:22:23 +0000.
+ * Date: Mon, 03 Dec 2018 19:49:08 +0000.
  */
 
 namespace App\Models;
@@ -27,8 +27,8 @@ use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
  * @property string $guard
  * 
  * @property \Illuminate\Database\Eloquent\Collection $computadors
+ * @property \Illuminate\Database\Eloquent\Collection $mov_perifericos
  * @property \Illuminate\Database\Eloquent\Collection $movimentacaos
- * @property \Illuminate\Database\Eloquent\Collection $movperifericos
  *
  * @package App\Models
  */
@@ -37,9 +37,9 @@ AuthenticatableContract,
 AuthorizableContract,
 CanResetPasswordContract
 {
-	
+
 	use Authenticatable, Authorizable, CanResetPassword;
-	
+
 	protected $primaryKey = 'IdAnalista';
 	public $timestamps = false;
 
@@ -60,13 +60,13 @@ CanResetPasswordContract
 		return $this->hasMany(\App\Models\Computador::class, 'IdAnalista');
 	}
 
+	public function mov_perifericos()
+	{
+		return $this->hasMany(\App\Models\MovPeriferico::class, 'IdAnalista');
+	}
+
 	public function movimentacaos()
 	{
 		return $this->hasMany(\App\Models\Movimentacao::class, 'IdAnalista');
-	}
-
-	public function movperifericos()
-	{
-		return $this->hasMany(\App\Models\Movperiferico::class, 'IdAnalista');
 	}
 }

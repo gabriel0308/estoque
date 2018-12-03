@@ -1,0 +1,1 @@
+docker run -p 80:80 -p 443:443 -v /home/toreh/Documentos/estoque/app/:/var/www/laravel/app/ -v /home/toreh/Documentos/estoque/public/:/var/www/laravel/public/  -v /home/toreh/Documentos/estoque/vendor/:/var/www/laravel/vendor/ -d eboraas/laravel

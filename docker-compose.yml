@@ -1,0 +1,28 @@
+version: '2'
+services:
+  web:
+    container_name: app-web
+    image: hitalos/laravel:latest
+    ports:
+        - 80:80
+    volumes:
+        - ./:/var/www
+    links:
+        - database
+    restart: always
+    environment:
+        - DB_HOST=database
+
+  database:
+      container_name: app-db
+      image: mariadb
+      ports:
+          - 3306:3306
+      restart: always
+      volumes:
+          - ./storage/mysql:/var/lib/mysql
+      environment:
+          - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+          - MYSQL_DATABASE=${DB_DATABASE}
+          - MYSQL_USER=${DB_USERNAME}
+          - MYSQL_ALLOW_EMPTY_PASSWORD=yes

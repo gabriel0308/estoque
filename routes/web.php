@@ -33,16 +33,16 @@ Route::resource('software','DAO\SoftwareController');
 Route::resource('tipo','DAO\TipoController');
 
 #Analista
-Route::view('/cadastroAnalista', 'forms\cadastroAnalista')->middleware('checkAdmin');
+Route::view('/cadastroAnalista', 'forms/cadastroAnalista')->middleware('checkAdmin');
 Route::post('gravarAnalista', 'DAO\AnalistaController@store')->middleware('checkAdmin');
 Route::get('/listagemAnalistas','DAO\AnalistaController@listagemAnalistas')->middleware('checkAdmin');
 
 #Fabricante
-Route::view('/cadastroFabricante', 'forms\cadastroFabricante')->middleware('auth');
+Route::view('/cadastroFabricante', 'forms/cadastroFabricante')->middleware('auth');
 Route::post('gravarFabricante', 'DAO\FabricanteController@store')->middleware('auth');
 
 #Tipo
-Route::view('/cadastroTipo','forms\cadastroTipo')->middleware('auth');
+Route::view('/cadastroTipo','forms/cadastroTipo')->middleware('auth');
 Route::post('gravarTipo', 'DAO\TipoController@store')->middleware('auth');
 
 #Modelo
@@ -58,7 +58,7 @@ Route::get('listagemComputadores', 'DAO\ComputadorController@listagemComputadore
 Route::get('listagemComputadores/ajax/{search}', 'DAO\ComputadorController@searchAjax')->middleware('auth');
 
 #Ticket
-Route::view('/cadastroTicket', 'forms\cadastroTicket')->middleware('auth');
+Route::view('/cadastroTicket', 'forms/cadastroTicket')->middleware('auth');
 Route::post('gravarTicket','DAO\TicketController@store')->middleware('auth');
 Route::get('listagemTickets', 'DAO\TicketController@listagemTickets')->middleware('auth');
 Route::get('editarTicket/{idTicket}', 'DAO\TicketController@updateTicket');

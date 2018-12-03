@@ -107,7 +107,7 @@ class ComputadorController extends Controller
         $fabricantes2 = Fabricante::orderBy('NomeFabricante', 'asc')
         ->get();
 
-        return view('forms\cadastroComp', compact('tipos', 'fabricantes2'));
+        return view('forms/cadastroComp', compact('tipos', 'fabricantes2'));
     }
 
     public function listarFabricanteAjax($idTipo)
@@ -140,7 +140,7 @@ class ComputadorController extends Controller
                         ->join('fabricante', 'fabricante.IdFabricante', '=', 'modelo.IdFabricante')
                         ->select('tipo.NomeTipo', 'computador.HostnameComp', 'computador.SerialComp', 'modelo.NomeModelo', 'computador.StatusComp', 'computador.ObservacaoComp', 'computador.LacreComp', 'computador.DataCadastroComp', 'analista.NomeAnalista')
                         ->paginate(15);
-        return view('listas\listaComputador', compact('computadores'));
+        return view('listas/listaComputador', compact('computadores'));
     }
 
     public function searchAjax($search)

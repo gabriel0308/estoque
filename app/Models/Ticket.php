@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Wed, 19 Sep 2018 21:22:23 +0000.
+ * Date: Mon, 03 Dec 2018 19:49:08 +0000.
  */
 
 namespace App\Models;
@@ -19,8 +19,8 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property string $UnidadeUsuario
  * @property float $NumeroTicket
  * 
+ * @property \Illuminate\Database\Eloquent\Collection $mov_perifericos
  * @property \Illuminate\Database\Eloquent\Collection $movimentacaos
- * @property \Illuminate\Database\Eloquent\Collection $movperifericos
  *
  * @package App\Models
  */
@@ -30,6 +30,10 @@ class Ticket extends Eloquent
 	protected $primaryKey = 'IdTicket';
 	public $timestamps = false;
 
+	protected $casts = [
+		'NumeroTicket' => 'float'
+	];
+
 	protected $fillable = [
 		'MatriculaUsuario',
 		'RamalUsuario',
@@ -38,13 +42,13 @@ class Ticket extends Eloquent
 		'NumeroTicket'
 	];
 
+	public function mov_perifericos()
+	{
+		return $this->hasMany(\App\Models\MovPeriferico::class, 'IdTicket');
+	}
+
 	public function movimentacaos()
 	{
 		return $this->hasMany(\App\Models\Movimentacao::class, 'IdTicket');
-	}
-
-	public function movperifericos()
-	{
-		return $this->hasMany(\App\Models\Movperiferico::class, 'IdTicket');
 	}
 }

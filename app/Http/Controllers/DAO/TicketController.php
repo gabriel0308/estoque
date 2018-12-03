@@ -95,7 +95,7 @@ class TicketController extends Controller
     {
         $tickets = Ticket::orderBy('ticket.NumeroTicket', 'asc')
                         ->paginate(15);
-        return view('listas\listaTicket', compact('tickets'));
+        return view('listas/listaTicket', compact('tickets'));
     }
 
     public function updateTicket($idTicket)

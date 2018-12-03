@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Wed, 19 Sep 2018 21:22:23 +0000.
+ * Date: Mon, 03 Dec 2018 19:49:08 +0000.
  */
 
 namespace App\Models;
@@ -24,6 +24,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  */
 class Software extends Eloquent
 {
+	protected $table = 'software';
 	protected $primaryKey = 'IdSoftware';
 	public $timestamps = false;
 

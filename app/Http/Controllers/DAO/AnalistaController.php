@@ -108,7 +108,7 @@ class AnalistaController extends Controller
     public function listagemAnalistas(){
         $analistas = analistum::orderBy('NomeAnalista', 'asc')
                                 ->get();
-        return view('listas\listaAnalista', compact('analistas'));
+        return view('listas/listaAnalista', compact('analistas'));
     }
 
 }
