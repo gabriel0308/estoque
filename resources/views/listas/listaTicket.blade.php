@@ -2,6 +2,8 @@
 
 @section('content')
 
+<script src="{{ asset('js/tickets.js') }}" defer></script>
+
 <div class="container">
     <div class="section">
         <div class="row">
@@ -35,14 +37,74 @@
                                             <th class="center">{{$ticket->RamalUsuario}}</th>
                                             <th class="center">{{$ticket->DepartamentoUsuario}}</th>
                                             <th class="center">{{$ticket->UnidadeUsuario}}</th>
-                                            <th class="center"><a class="btn-floating btn-small waves-effect waves-light pink darken-4"><i class="material-icons">desktop_windows</i></a>
-                                                <a class="btn-floating btn-small waves-effect waves-light pink darken-4" href="editarTicket/{{$ticket->IdTicket}}" id="edit"><i class="material-icons">create</i></a>
+                                            <th class="center"><a class="btn-floating btn-small waves-effect waves-light pink darken-4 modal-trigger" href="#selecionarComputador"><i class="material-icons">desktop_windows</i></a>
+                                                <a class="btn-floating btn-small waves-effect waves-light pink darken-4 modal-trigger" href="#modal{{$ticket->IdTicket}}"><i class="material-icons">create</i></a>
                                                 <a class="btn-floating btn-small waves-effect waves-light pink darken-4"><i class="material-icons">delete</i></a><th>
+                                                
+                                                
+                                                    <div id="modal{{$ticket->IdTicket}}" class="modal">
+                                                <form method="POST" action="atualizaTicket">
+                                                @csrf
+                                                    <div class="modal-content">
+                                                        <h4>Editar Ticket</h4>
+                                                        <div class="row">
+                                                            <div class="input-field col s4">
+                                                                    <input id="NumeroTicket" type="text" name="NumeroTicket" value="{{$ticket->NumeroTicket}}" required readonly>
+                                                                    <label for="NumeroTicket">Numero</label>
+                                                            </div>
+                                                            <div class="input-field col s4">
+                                                                    <input id="MatriculaUsuario" type="text" name="MatriculaUsuario" value="{{$ticket->MatriculaUsuario}}" required readonly>
+                                                                    <label for="MatriculaUsuario">Matricula do Usuario</label>
+                                                            </div>
+                                                            <div class="input-field col s4">
+                                                                    <input id="RamalUsuario" type="text" name="RamalUsuario" value="{{$ticket->RamalUsuario}}" required>
+                                                                    <label for="RamalUsuario">Ramal do Usuario</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="input-field col s8">
+                                                                    <input id="DepartamentoUsuario" type="text" name="DepartamentoUsuario" value="{{$ticket->DepartamentoUsuario}}" required>
+                                                                    <label for="DepartamentoUsuario">Departamento do Usuario</label>
+                                                            </div>
+                                                            <div class="input-field col s4">
+                                                                    <input id="UnidadeUsuario" type="text" name="UnidadeUsuario" value="{{$ticket->UnidadeUsuario}}" required>
+                                                                    <label for="UnidadeUsuario">Unidade do Usuario</label>
+                                                            </div>
+                                                            <input type="hidden" id="IdTicket" name="IdTicket" value="{{$ticket->IdTicket}}">
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                            <button class="modal-close btn pink darken-4 waves-effect waves-light right" type="submit">Enviar</button>
+                                                    </div>
+                                                </form>
+                                                </div>
+
+                                                <div id="selecionarComputador" class="modal">
+                                                    <form action="vinculaComputador" name="vinculaComputador" id="vinculaComputador" method="POST">
+                                                        <div class="modal-content">
+                                                            <h4>Selecionar Computador</h4>
+                                                            <div class="row">
+                                                                <div class="input-field col s4">
+                                                                    <input id="HostnameCompAjax" type="text" name="HostnameCompAjax">
+                                                                    <label for="HostnameCompAjax">Hostname do Computador</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row" name="divRadio" id="divRadio" hidden>
+                                                                <p>teste</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="submit" class=" modal-close btn pink darken-4 waves-effect waves-light right">Enviar</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
                                         </tr>
+
                                     @endforeach
                                 </tbody>
                             </table>
                             {{$tickets->links()}}
+
                     </div>
                 </div>
             </div>

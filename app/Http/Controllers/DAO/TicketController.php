@@ -103,4 +103,17 @@ class TicketController extends Controller
         $ticket = Ticket::find($idTicket);
         return json_encode($ticket);
     }
+
+    public function atualizaTicket(Request $request)
+    {
+        $ticket = Ticket::find($request->IdTicket);
+
+        $ticket->RamalUsuario = strtoupper($request->RamalUsuario);
+        $ticket->DepartamentoUsuario = strtoupper($request->DepartamentoUsuario);
+        $ticket->UnidadeUsuario = strtoupper($request->UnidadeUsuario);
+
+        $ticket->save();
+
+        return redirect()->back();
+    }
 }

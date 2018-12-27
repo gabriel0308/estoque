@@ -6,12 +6,7 @@ $( document ).ready(function()
         $('select').formSelect();
         $('.sidenav').sidenav();
 
-        //textArea Cadastro Computador
-
-        $('#ObservacaoComp').val('');
-        M.textareaAutoResize($('#ObservacaoComp'));
-
-        //inicializa Modal Computador
+        //inicializa Modal
         $('.modal').modal();
 
     }   

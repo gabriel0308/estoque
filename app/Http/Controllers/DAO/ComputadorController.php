@@ -145,10 +145,12 @@ class ComputadorController extends Controller
 
     public function searchAjax($search)
     {
-        $computadores = Computador::where('computador.HostnameComp', '=', '%'.$search.'%')
-                        ->orWhere('computador.SerialComp', '=', '%'.$search.'%')
+        $computadores = Computador::where('computador.HostnameComp', 'like', '%'.$search.'%')
+                        ->orWhere('computador.SerialComp', 'like', '%'.$search.'%')
+                        ->orderBy('computador.HostnameComp', 'asc')
+                        ->take(12)
                         ->get();
-        return json_encode($computadoresAjax);
+        return json_encode($computadores);
     }
 
 }

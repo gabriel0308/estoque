@@ -1,38 +1,48 @@
-$(document).ready(function () {
+$(document).ready(function () 
+{
 
-    $('a#edit').on('change', function () {
+    $('#HostnameCompAjax').on('keyup', function(){
 
-        if (idTipo) {
+        var hostnameComp = $('#HostnameCompAjax').val();
 
+        if(hostnameComp){
             $.ajax({
-                url: 'cadastrarComputador/ajax/tipo/' + idTipo,
+                url: 'listagemComputadores/ajax/search/' + hostnameComp,
                 type: "get",
                 dataType: "json",
                 success: function (data) {
+                    console.log(data);
+                    if(data){
+                        console.log('teste')
+                        $('#divRadio').removeAttr('hidden');
+                        $('#divRadio').empty();
+                        $.each(data, function(count, value){
 
-                    $('#DivIdFabricante').removeAttr('hidden');
-                    $('select[name="IdFabricante"]').empty();
-                    $('select[name="IdModelo"]').empty();
-                    $('select[name="IdFabricante"]').append('<option value=""></option>');
-                    $.each(data, function (fabrica, value) {
+                        var radio = $('<div class="input-field col s3"><p><label><input name="HostnameComp" id="'+ value.IdComp + '" type="radio" value="'+ value.IdComp +'"/><span>'+value.HostnameComp+'</span></label><p></div>');
+                        console.log(radio);
+                        $('#divRadio').append(radio);
 
-                        console.log(value.IdFabricante);
-                        console.log(value.NomeFabricante);
+                        });
+                    }
+                    else
+                    {
+                        
+                        $('#divRadio').removeAttr('hidden');
+                        $('#divRadio').empty();
+                        var erro = $('<h3>ERROU!!</h3>');
+                        $('#divRadio').append(erro);
 
-                        //$('select[name="IdFabricante"]').append('<option value="'+ value.IdFabricante + '">' + value.NomeFabricante + '</option>');
-                        $('select[name="IdFabricante"]').append($("<option>").attr('value', value.IdFabricante).text(value.NomeFabricante));
-
-                    });
-
-                    $('select').formSelect();
+                    }
 
                 }
-                //$("#IdFabricante").wrap("<div class='col-md-6' id='lblFabricante'></div>")
             });
+        }
+        else{
 
-        } else {
-            $('select[name="IdFabricante"]').empty();
-            $('select[name="IdModelo"]').empty();
+            
+            $('#divRadio').removeAttr('hidden');
+            $('#divRadio').empty();
+
         }
 
     });

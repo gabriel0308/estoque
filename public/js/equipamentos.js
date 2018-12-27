@@ -1,5 +1,10 @@
 $(document).ready(function () {
 
+    //textArea Cadastro Computador
+
+    $('#ObservacaoComp').val('');
+    M.textareaAutoResize($('#ObservacaoComp'));
+
     $('select').formSelect();
 
     $('select[name="IdTipo"]').on('change', function () {
@@ -18,10 +23,7 @@ $(document).ready(function () {
                     $('select[name="IdFabricante"]').empty();
                     $('select[name="IdModelo"]').empty();
                     $('select[name="IdFabricante"]').append('<option value=""></option>');
-                    $.each(data, function (fabrica, value) {
-
-                        console.log(value.IdFabricante);
-                        console.log(value.NomeFabricante);
+                    $.each(data, function (fabricante , value) {
 
                         //$('select[name="IdFabricante"]').append('<option value="'+ value.IdFabricante + '">' + value.NomeFabricante + '</option>');
                         $('select[name="IdFabricante"]').append($("<option>").attr('value', value.IdFabricante).text(value.NomeFabricante));
