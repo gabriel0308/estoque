@@ -83,4 +83,11 @@ class MovimentacaoController extends Controller
     {
         //
     }
+
+    public function vinculaComputador(Request $request)
+    {
+        echo($request->IdComp);
+        echo("<br>");
+        echo($request->IdTicket);
+    }
 }

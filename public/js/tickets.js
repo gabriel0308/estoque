@@ -1,9 +1,9 @@
 $(document).ready(function () 
 {
 
-    $('#HostnameCompAjax').on('keyup', function(){
+    $('input:text.search').on('keyup', function(){
 
-        var hostnameComp = $('#HostnameCompAjax').val();
+        var hostnameComp = $('input:text.search').val();
 
         if(hostnameComp){
             $.ajax({
@@ -14,23 +14,24 @@ $(document).ready(function ()
                     console.log(data);
                     if(data){
                         console.log('teste')
-                        $('#divRadio').removeAttr('hidden');
-                        $('#divRadio').empty();
+                        $('div.lista-notebook').removeAttr('hidden');
+                        $('div.lista-notebook').empty();
                         $.each(data, function(count, value){
 
-                        var radio = $('<div class="input-field col s3"><p><label><input name="HostnameComp" id="'+ value.IdComp + '" type="radio" value="'+ value.IdComp +'"/><span>'+value.HostnameComp+'</span></label><p></div>');
+                        var radio = $('<div class="input-field col s3"><p><label><input name="IdComp" id="'+ value.IdComp + '" type="radio" value="'+ value.IdComp +'"/><span>'+value.HostnameComp+'</span></label><p></div>');
                         console.log(radio);
-                        $('#divRadio').append(radio);
+                        var divRadio = document.getElementsByClassName("divRadio")
+                        divRadio.append(radio);
 
                         });
                     }
                     else
                     {
                         
-                        $('#divRadio').removeAttr('hidden');
-                        $('#divRadio').empty();
+                        $('div.lista-notebook').removeAttr('hidden');
+                        $('div.lista-notebook').empty();
                         var erro = $('<h3>ERROU!!</h3>');
-                        $('#divRadio').append(erro);
+                        $('div.lista-notebook').append(erro);
 
                     }
 
@@ -40,8 +41,8 @@ $(document).ready(function ()
         else{
 
             
-            $('#divRadio').removeAttr('hidden');
-            $('#divRadio').empty();
+            $('div.lista-notebook').removeAttr('hidden');
+            $('div.lista-notebook').empty();
 
         }
 

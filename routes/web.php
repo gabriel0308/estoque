@@ -63,3 +63,6 @@ Route::post('gravarTicket','DAO\TicketController@store')->middleware('auth');
 Route::get('listagemTickets', 'DAO\TicketController@listagemTickets')->middleware('auth');
 Route::get('editarTicket/{idTicket}', 'DAO\TicketController@updateTicket');
 Route::post('atualizaTicket', 'Dao\TicketController@atualizaTicket')->middleware('auth');
+
+#Movimentação
+Route::post('/vinculaComputador','Dao\MovimentacaoController@vinculaComputador')->middleware('auth');
