@@ -5,6 +5,7 @@ namespace App\Http\Controllers\DAO;
 use App\Models\Movimentacao;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class MovimentacaoController extends Controller
 {
@@ -86,8 +87,14 @@ class MovimentacaoController extends Controller
 
     public function vinculaComputador(Request $request)
     {
-        echo($request->IdComp);
-        echo("<br>");
-        echo($request->IdTicket);
+
+        $movimentacao = new Movimentacao;
+        $movimentacao->TipoMovimentacao = 'DEFINITIVO';
+        $movimentacao->computador()->associate($request->IdComp);
+        $movimentacao->analistum()->associate(Auth::user());
+        $movimentacao->ticket()->associate($request->IdTicket);
+        $movimentacao->save();
+        return redirect()->back();
+
     }
 }

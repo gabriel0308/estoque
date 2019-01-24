@@ -1,9 +1,15 @@
-$(document).ready(function () 
+$(document).on("click", ".modal-trigger", function () 
 {
 
-    $('input:text.search').on('keyup', function(){
+    console.log($(this).data('id'));
 
-        var hostnameComp = $('input:text.search').val();
+    var id = $(this).data('id');
+
+    $('#HostnameCompAjax'.concat(id)).on('keyup', function(){
+
+        var hostnameComp = $('#HostnameCompAjax'.concat(id)).val();
+
+        console.log(hostnameComp);
 
         if(hostnameComp){
             $.ajax({
@@ -11,27 +17,23 @@ $(document).ready(function ()
                 type: "get",
                 dataType: "json",
                 success: function (data) {
-                    console.log(data);
                     if(data){
-                        console.log('teste')
-                        $('div.lista-notebook').removeAttr('hidden');
-                        $('div.lista-notebook').empty();
+                        $('#divRadio'.concat(id)).removeAttr('hidden');
+                        $('#divRadio'.concat(id)).empty();
                         $.each(data, function(count, value){
 
                         var radio = $('<div class="input-field col s3"><p><label><input name="IdComp" id="'+ value.IdComp + '" type="radio" value="'+ value.IdComp +'"/><span>'+value.HostnameComp+'</span></label><p></div>');
-                        console.log(radio);
-                        var divRadio = document.getElementsByClassName("divRadio")
-                        divRadio.append(radio);
+                        $('#divRadio'.concat(id)).append(radio);
 
                         });
                     }
                     else
                     {
                         
-                        $('div.lista-notebook').removeAttr('hidden');
-                        $('div.lista-notebook').empty();
+                        $('#divRadio'.concat(id)).removeAttr('hidden');
+                        $('#divRadio'.concat(id)).empty();
                         var erro = $('<h3>ERROU!!</h3>');
-                        $('div.lista-notebook').append(erro);
+                        $('#divRadio'.concat(id)).append(erro);
 
                     }
 

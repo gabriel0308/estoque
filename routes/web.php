@@ -65,4 +65,4 @@ Route::get('editarTicket/{idTicket}', 'DAO\TicketController@updateTicket');
 Route::post('atualizaTicket', 'DAO\TicketController@atualizaTicket')->middleware('auth');
 
 #Movimentação
-Route::post('/vinculaComputador','Dao\MovimentacaoController@vinculaComputador')->middleware('auth');
+Route::post('/vinculaComputador','DAO\MovimentacaoController@vinculaComputador')->middleware('auth');

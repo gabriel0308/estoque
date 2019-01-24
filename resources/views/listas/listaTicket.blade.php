@@ -37,7 +37,7 @@
                                             <th class="center">{{$ticket->RamalUsuario}}</th>
                                             <th class="center">{{$ticket->DepartamentoUsuario}}</th>
                                             <th class="center">{{$ticket->UnidadeUsuario}}</th>
-                                            <th class="center"><a class="btn-floating btn-small waves-effect waves-light pink darken-4 modal-trigger" href="#selecionarComputador{{$ticket->IdTicket}}"><i class="material-icons">desktop_windows</i></a>
+                                            <th class="center"><a class="btn-floating btn-small waves-effect waves-light pink darken-4 modal-trigger" data-id="{{$ticket->IdTicket}}" href="#selecionarComputador{{$ticket->IdTicket}}"><i class="material-icons">desktop_windows</i></a>
                                                 <a class="btn-floating btn-small waves-effect waves-light pink darken-4 modal-trigger" href="#modal{{$ticket->IdTicket}}"><i class="material-icons">create</i></a>
                                                 <a class="btn-floating btn-small waves-effect waves-light pink darken-4"><i class="material-icons">delete</i></a><th>
                                                 
@@ -86,12 +86,12 @@
                                                             <h4>Selecionar Computador</h4>
                                                             <div class="row">
                                                                 <div class="input-field col s4">
-                                                                    <input class="search" id="HostnameCompAjax" type="text" name="HostnameCompAjax">
+                                                                    <input class="search" id="HostnameCompAjax{{$ticket->IdTicket}}" type="text" name="HostnameCompAjax">
                                                                     <label for="HostnameCompAjax">Hostname do Computador</label>
                                                                 </div>
                                                                 <input type="hidden" id="IdTicket" name="IdTicket" value="{{$ticket->IdTicket}}">
                                                             </div>
-                                                            <div class="divRadio row divRadio lista-notebook" name="divRadio" id="divRadio" hidden>
+                                                            <div class="divRadio row divRadio lista-notebook" name="divRadio" id="divRadio{{$ticket->IdTicket}}" hidden>
                                                                 <p>teste</p>
                                                             </div>
                                                         </div>
