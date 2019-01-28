@@ -68,6 +68,7 @@
                                 @endauth
                                 <li><a class="dropdown-trigger white-text" href="#!" data-target="computadores1">Gerenciar Computadores<i class="material-icons right white-text">arrow_drop_down</i></a></li>
                                 <li><a class="dropdown-trigger white-text" href="#!" data-target="tickets1">Gerenciar Tickets<i class="material-icons right white-text">arrow_drop_down</i></a></li>
+                                <li><a href="listaMovimentacoes">Movimentações</a></li>
                                 <li><a class="right" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a></li>
                             </ul>
                             
@@ -77,6 +78,7 @@
                                 @endauth
                                 <li><a class="dropdown-trigger white-text" href="#!" data-target="computadores2">Gerenciar Computadores<i class="material-icons right white-text">arrow_drop_down</i></a></li>
                                 <li><a class="dropdown-trigger white-text" href="#!" data-target="tickets2">Gerenciar Tickets<i class="material-icons right white-text">arrow_drop_down</i></a></li>
+                                <li><a href="listaMovimentacoes">Movimentações</a></li>
                                 <li><a class="white-text" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a></li>
                             </ul>       
 

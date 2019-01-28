@@ -97,4 +97,15 @@ class MovimentacaoController extends Controller
         return redirect()->back();
 
     }
+
+    public function listaMovimentacao() 
+    {
+        $movimentacoes = Movimentacao::orderBy('movimentacao.DataMovimentacao', 'asc')
+                        ->join('analista', 'analista.IdAnalista', 'movimentacao.IdAnalista')
+                        ->join('computador', 'computador.IdComp', 'movimentacao.IdComp')
+                        ->join('ticket', 'ticket.IdTicket', 'movimentacao.IdTicket')
+                        ->select('computador.HostnameComp','ticket.MatriculaUsuario','movimentacao.DataMovimentacao', 'ticket.NumeroTicket', 'analista.NomeAnalista')
+                        ->get();
+        return view('listas/listaMovimentacao', compact('movimentacoes'));
+    }
 }

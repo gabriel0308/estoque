@@ -66,3 +66,4 @@ Route::post('atualizaTicket', 'DAO\TicketController@atualizaTicket')->middleware
 
 #Movimentação
 Route::post('/vinculaComputador','DAO\MovimentacaoController@vinculaComputador')->middleware('auth');
+Route::get('listaMovimentacoes', 'DAO\MovimentacaoController@listaMovimentacao')->middleware('auth');
