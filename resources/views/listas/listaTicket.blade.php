@@ -87,7 +87,7 @@
                                                             <div class="row">
                                                                 <div class="input-field col s4">
                                                                     <input class="search" id="HostnameCompAjax{{$ticket->IdTicket}}" type="text" name="HostnameCompAjax">
-                                                                    <label for="HostnameCompAjax">Hostname do Computador</label>
+                                                                    <label for="HostnameCompAjax{{$ticket->IdTicket}}">Hostname do Computador</label>
                                                                 </div>
                                                                 <input type="hidden" id="IdTicket" name="IdTicket" value="{{$ticket->IdTicket}}">
                                                             </div>

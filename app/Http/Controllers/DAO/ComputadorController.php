@@ -112,11 +112,11 @@ class ComputadorController extends Controller
 
     public function listarFabricanteAjax($idTipo)
     {
-        $fabricantes =  Modelo::join('Fabricante', 'Fabricante.IdFabricante', '=', 'Modelo.IdFabricante')
-                                ->select('Fabricante.IdFabricante', 'Fabricante.NomeFabricante')
-                                ->where('Modelo.IdTipo', '=', $idTipo)
-                                ->distinct('Fabricante.IdFabricante')
-                                ->orderBy('Fabricante.NomeFabricante', 'asc')
+        $fabricantes =  Modelo::join('fabricante', 'fabricante.IdFabricante', '=', 'modelo.IdFabricante')
+                                ->select('fabricante.IdFabricante', 'fabricante.NomeFabricante')
+                                ->where('modelo.IdTipo', '=', $idTipo)
+                                ->distinct('fabricante.IdFabricante')
+                                ->orderBy('fabricante.NomeFabricante', 'asc')
                                 ->get();
         return json_encode($fabricantes);
 
@@ -125,7 +125,7 @@ class ComputadorController extends Controller
     public function listarModeloAjax($idTipo, $idFabricante)
     {
         $modelos = Modelo::where("IdFabricante", $idFabricante)
-                            ->select('Modelo.IdModelo','Modelo.NomeModelo')
+                            ->select('modelo.IdModelo','modelo.NomeModelo')
                             ->where("IdTipo", $idTipo)
                             ->get();
         return json_encode($modelos);
