@@ -23,16 +23,6 @@
 </head>
 <body>
     <div id="app">
-        
-            <ul id="analistas1" class="dropdown-content pink darken-4">
-                    <li><a href="/cadastroAnalista" class="dropdown-item white-text">Cadastrar Analista</a></li>
-                    <li><a href="/listagemAnalistas" class="dropdown-item white-text">Listar Analistas</a></li>
-            </ul>
-
-            <ul id="analistas2" class="dropdown-content pink darken-4">
-                    <li><a href="/cadastroAnalista" class="dropdown-item white-text">Cadastrar Analista</a></li>   
-                    <li><a href="/listagemAnalistas" class="dropdown-item white-text">Listar Analistas</a></li>
-            </ul>
 
             <ul id="computadores1" class="dropdown-content pink darken-4">
                     <li><a href="/cadastrarComputador" class="dropdown-item white-text">Cadastrar Computador</a></li>   
@@ -64,7 +54,7 @@
                             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                             <ul class="right hide-on-med-and-down" id="nav-mobile">
                                 @auth('admin')
-                                    <li><a class="dropdown-trigger white-text" href="#!" data-target="analistas1">Gerenciar Analistas<i class="material-icons right white-text">arrow_drop_down</i></a></li>
+                                    <li><a href="/listagemAnalistas" class="dropdown-item white-text">Listar Analistas</a></li>
                                 @endauth
                                 <li><a class="dropdown-trigger white-text" href="#!" data-target="computadores1">Gerenciar Computadores<i class="material-icons right white-text">arrow_drop_down</i></a></li>
                                 <li><a class="dropdown-trigger white-text" href="#!" data-target="tickets1">Gerenciar Tickets<i class="material-icons right white-text">arrow_drop_down</i></a></li>
@@ -74,11 +64,11 @@
                             
                             <ul class="sidenav pink darken-4" id="mobile-demo">
                                 @auth('admin')
-                                    <li><a class="dropdown-trigger white-text" href="#!" data-target="analistas2">Gerenciar Analistas<i class="material-icons right white-text">arrow_drop_down</i></a></li>
+                                    <li><a href="/listagemAnalistas" class="dropdown-item white-text">Listar Analistas</a></li>
                                 @endauth
                                 <li><a class="dropdown-trigger white-text" href="#!" data-target="computadores2">Gerenciar Computadores<i class="material-icons right white-text">arrow_drop_down</i></a></li>
                                 <li><a class="dropdown-trigger white-text" href="#!" data-target="tickets2">Gerenciar Tickets<i class="material-icons right white-text">arrow_drop_down</i></a></li>
-                                <li><a href="listaMovimentacoes">Movimentações</a></li>
+                                <li><a class="white-text" href="listaMovimentacoes">Movimentações</a></li>
                                 <li><a class="white-text" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a></li>
                             </ul>       
 

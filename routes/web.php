@@ -36,6 +36,7 @@ Route::resource('tipo','DAO\TipoController');
 Route::view('/cadastroAnalista', 'forms/cadastroAnalista')->middleware('checkAdmin');
 Route::post('gravarAnalista', 'DAO\AnalistaController@store')->middleware('checkAdmin');
 Route::get('/listagemAnalistas','DAO\AnalistaController@listagemAnalistas')->middleware('checkAdmin');
+Route::post('/atualizaAnalista','DAO\AnalistaController@AtualizaAnalista')->middleware('checkAdmin');
 
 #Fabricante
 Route::view('/cadastroFabricante', 'forms/cadastroFabricante')->middleware('auth');

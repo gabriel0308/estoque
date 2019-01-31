@@ -42,6 +42,9 @@ class AnalistaController extends Controller
         $analista->MatriculaAnalista = $request->MatriculaAnalista;
         $analista->NomeAnalista = $request->NomeAnalista;
         $analista->SenhaAnalista = sha1($request->SenhaAnalista);
+        if($request->guard === 'on'){
+            $analista->guard = 'Admin';
+        }
         $analista->save();
         return redirect()->back();
         }
@@ -109,6 +112,26 @@ class AnalistaController extends Controller
         $analistas = analistum::orderBy('NomeAnalista', 'asc')
                                 ->get();
         return view('listas/listaAnalista', compact('analistas'));
+    }
+
+    public function AtualizaAnalista(Request $request){
+
+        $analista = analistum::find($request->IdAnalista);
+        if($request->SenhaAnalista == $request->ConfirmarSenha){
+
+            $analista->SenhaAnalista = sha1($request->SenhaAnalista);
+            if($request->guard === 'on'){
+                $analista->guard = 'Admin';
+            }
+            else
+                $analista->guard = '';
+
+            $analista->save();
+
+        }
+
+        return redirect()->back();
+
     }
 
 }
