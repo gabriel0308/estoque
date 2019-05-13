@@ -9,5 +9,9 @@ $( document ).ready(function()
         //inicializa Modal
         $('.modal').modal();
 
+        //inicializa dataTable
+
+            $('#dataTable').DataTable();
+
     }   
 );

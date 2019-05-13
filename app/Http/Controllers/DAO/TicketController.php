@@ -94,7 +94,7 @@ class TicketController extends Controller
     public function listagemTickets() 
     {
         $tickets = Ticket::orderBy('ticket.NumeroTicket', 'asc')
-                        ->paginate(15);
+                        ->get();
         return view('listas/listaTicket', compact('tickets'));
     }
 

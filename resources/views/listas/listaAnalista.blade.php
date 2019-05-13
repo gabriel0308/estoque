@@ -11,7 +11,7 @@
 
                     <div class="card-body">
 
-                            <table class="table highlight">
+                            <table class="display" id="dataTable">
                                 <thead>
                                     <tr>
                                         <th>Nome</th>

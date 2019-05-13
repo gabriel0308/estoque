@@ -139,7 +139,7 @@ class ComputadorController extends Controller
                         ->join('tipo', 'tipo.IdTipo', '=', 'modelo.IdTipo')
                         ->join('fabricante', 'fabricante.IdFabricante', '=', 'modelo.IdFabricante')
                         ->select('tipo.NomeTipo', 'computador.HostnameComp', 'computador.SerialComp', 'modelo.NomeModelo', 'computador.StatusComp', 'computador.ObservacaoComp', 'computador.LacreComp', 'computador.DataCadastroComp', 'analista.NomeAnalista')
-                        ->paginate(15);
+                        ->get();
         return view('listas/listaComputador', compact('computadores'));
     }
 

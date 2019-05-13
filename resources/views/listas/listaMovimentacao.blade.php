@@ -10,13 +10,8 @@
                     <h4 class="header2">{{ __('Movimentações') }}</h4>
 
                     <div class="card-body ">
-
-                            <div class="input-field col s4 right">
-                                <label for="search">Pesquisar</label>
-                                <input type="text" name="search" id="search">
-                            </div>
-
-                            <table class="table highlight">
+                    
+                            <table class="display" id="dataTable">
                                 <thead>
                                     <tr>
                                         <th>Ticket</th>

@@ -11,12 +11,7 @@
 
                     <div class="card-body ">
 
-                            <div class="input-field col s4 right">
-                                <label for="search">Pesquisar</label>
-                                <input type="text" name="search" id="search">
-                            </div>
-
-                            <table class="table highlight">
+                            <table class="display" id="dataTable">
                                 <thead>
                                     <tr>
                                         <th>Tipo</th>
@@ -46,7 +41,6 @@
                                     @endforeach
                                 </tbody>
                             </table>
-                            {{$computadores->links()}}
                     </div>
                 </div>
             </div>
