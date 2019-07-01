@@ -106,7 +106,7 @@ ALTER TABLE MovPeriferico ADD FOREIGN KEY(IdTicket) REFERENCES Ticket (IdTicket)
 ALTER TABLE Periferico ADD FOREIGN KEY(IdModeloPeriferico) REFERENCES ModeloPeriferico (IdModeloPeriferico);
 ALTER TABLE Movimentacao ADD FOREIGN KEY(IdTicket) REFERENCES Ticket (IdTicket);
 
-insert into analista values ('', 'cs261967', 'Gabriel', sha1('9F90amv8'), '', 'admin');
-select * from analista;
+insert INTO Analista (MatriculaAnalista, NomeAnalista, SenhaAnalista, guard) values ( 'cs261967', 'Gabriel', sha1('9F90amv8'), 'admin');
+select * from Analista;
 
 
